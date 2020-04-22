@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "GET MH-Rest/resources/exportlocations",
+    "description": "Mh-Rest.Schemagen: List the exportlocations and generate a schema",
+    "default": true,
+    "examples": [],
+    "type": "object",
+    "properties": {
+        "request": {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "null"
+                },
+                "query": {
+                    "type": "object"
+                }
+            }
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "httpAccessible": {
+                                "type": "boolean"
+                            },
+                            "exportReasonRequired": {
+                                "type": "boolean"
+                            },
+                            "exportReasons": {
+                                "type": "array"
+                            },
+                            "customExportReasonAllowed": {
+                                "type": "boolean"
+                            }
+                        },
+                        "required": [
+                            "customExportReasonAllowed",
+                            "exportReasonRequired",
+                            "exportReasons",
+                            "httpAccessible",
+                            "id",
+                            "name"
+                        ]
+                    }
+                },
+                "status": {
+                    "type": "integer",
+                    "enum": [
+                        200
+                    ]
+                }
+            }
+        }
+    }
+}

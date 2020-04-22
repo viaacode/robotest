@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "GET MH-Rest/resources/webhooks",
+    "description": "Mh-Rest.Schemagen: List the webhooks and generate a schema",
+    "default": true,
+    "examples": [],
+    "type": "object",
+    "properties": {
+        "request": {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "null"
+                },
+                "query": {
+                    "type": "object"
+                }
+            }
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+                                "description": "UUID"
+                            },
+                            "url": {
+                                "type": "string",
+                                "format": "uri",
+                                "description": "Webhook endpoint (URL)"
+                            },
+                            "creationDate": {
+                                "type": "string",
+                                "format": "date-time",
+                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
+                                "description": "Date the webhook was registered"
+                            }
+                        },
+                        "required": [
+                            "creationDate",
+                            "id",
+                            "url"
+                        ]
+                    }
+                },
+                "status": {
+                    "type": "integer",
+                    "enum": [
+                        200
+                    ]
+                }
+            }
+        }
+    }
+}

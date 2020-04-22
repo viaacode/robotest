@@ -1,0 +1,4 @@
+--logtitle Test Log: INT
+--reporttitle Test Report: INT
+--exclude schemagen
+--include int

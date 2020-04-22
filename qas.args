@@ -1,0 +1,4 @@
+--logtitle Test Log: QAS
+--reporttitle Test Report: QAS
+--exclude schemagen
+--include qas

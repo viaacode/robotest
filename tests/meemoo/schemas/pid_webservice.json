@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "default": true,
+    "description": "Tests.Meemoo.Pid Webservice.Schemagen: Test the pid_webservice",
+    "examples": [],
+    "properties": {
+        "request": {
+            "properties": {
+                "body": {
+                    "type": "null"
+                },
+                "query": {
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "response": {
+            "properties": {
+                "body": {
+                    "items": {
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^[a-z0-9]{10}$",
+                                "description": "A pid is a 10-digit lowercase alpha-numeric string"
+                            },
+                            "number": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "number"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "enum": [
+                        200
+                    ],
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "title": "GET 1 pid from the Pid Webservice",
+    "type": "object"
+}
