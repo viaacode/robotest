@@ -3,14 +3,17 @@ Documentation     A test suite for the monitoring back-office
 ...
 ...               A single valid login test for the MediaHaven
 ...               monitoring back-office
-Resource          mh-resource.robot
+Resource          monitoring-resource.robot
 
 *** Test Cases ***
 Valid Login to MH monitoring interface
     [Tags]    web-test  login  mediahaven  prd  qas  int
     Open Browser To Login Page
-    Input Username    ${VALID_USER}
-    Input Password    ${VALID_PASSWORD}
+    ${username}=    Get username from vault   mediahaven
+    ${passwd}=      Get passwd from vault     mediahaven
+    Input Username    ${username}
+    Input Password    ${passwd}
     Submit Credentials
     Index Page Should Be Open
+    Index Page Should Have All Tabs
     [Teardown]    Close Browser

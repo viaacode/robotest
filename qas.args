@@ -1,4 +1,6 @@
 --logtitle Test Log: QAS
 --reporttitle Test Report: QAS
+--pythonpath ./libraries
 --exclude schemagen
 --include qas
+--norpa

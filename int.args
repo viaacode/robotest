@@ -1,4 +1,6 @@
 --logtitle Test Log: INT
 --reporttitle Test Report: INT
+--pythonpath ./libraries
 --exclude schemagen
 --include int
+--norpa

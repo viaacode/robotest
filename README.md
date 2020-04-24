@@ -1,8 +1,9 @@
-
 # Robotest: E2E testing with the Robot Framework
 
 > **Robot Framework** is a generic open source automation framework. It can be
 > used for test automation and robotic process automation (RPA).
+
+The framework was initially developed at Nokia and was open sourced in 2008.
 
 Some links about:
 - the Robot Framework:
@@ -23,14 +24,20 @@ Some links about:
 
 ## Configuration
 
-Copy the `env.yaml.example` file and fill in the required credentials:
+### Environment specific variables
+
+Copy the `env.yaml.example` file and fill in the missing values:
 
     $ cp env.yaml.example qas.yaml
 
-Copy the `tests/mediahaven/headers.json.example` file and fill in the base-64
-Basic auth header:
+### Secrets
 
-    $ cp tests/mediahaven/headers.json.example tests/mediahaven/headers.json
+Fetched from a [Vault](https://www.vaultproject.io/) instance.
+
+**Note**: Be sure to set the `VAULT_ADDR` and `GITHUB_TOKEN` environment
+variables before running the tests.
+
+_TODO_: Refactor into external `robotframework-vault` library.
 
 ## Running the tests
 
@@ -38,15 +45,26 @@ Select the environment to test by setting an environment variable (`int`, `qas`
 or `prd`) and run the tests with:
 
     $ export ENV=qas
-    $ pipenv run robot --norpa -A ${ENV}.args -V ${ENV}.yaml --outputdir ./results ./tests
+    $ pipenv run robot -A ${ENV}.args -V ${ENV}.yaml --outputdir ./results ./tests
 
 View the HTML report in your browser at: `WORK_DIR/results/report.html`
 
 ## Concepts
 
+This will give you a short introduction on the concepts in use in the Robot
+Framework. For more in depth documentation, check out
+[RobotFrameworkUserGuide](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html).
+
+_TODO_:
+- Keywords and Higher Order Keywords
+- Test Suites
+- Test Cases
+- Tasks (RPA)
+- Tags
+
 ### Tags
 
-**TODO**: explain
+_TODO_
 
 About platforms:
 
@@ -70,15 +88,10 @@ on the switch?"
 Did a bug-fix introduce malfunctions in other parts of the code base? (Or, was
 a bug-fix properly shipped...)
 
-### Caveats
+## Caveats
 
-#### Clear Expectations
+### Clear Expectations
 
 Validating responses, within a single Test Case, against a JSON schema via the
 `Expect Response` keyword should always be followed by the `Clear Expectations`
 keyword. If not, a `KeyError: 'request'` is raised.
-
-## TODO
-
-- secrets management, possibly via [robotframework-crypto](https://pypi.org/project/robotframework-crypto/)
-- ...

@@ -1,4 +1,6 @@
 --logtitle Test Log: PRD
 --reporttitle Test Report: PRD
+--pythonpath ./libraries
 --exclude schemagen
 --include prd
+--norpa
