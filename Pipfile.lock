@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f7eed3b719a15250cf572885d17250f3a628c48cbd6e152ffd9adee834fd8f62"
+            "sha256": "bc8bab173ddc7aa7c4d937f96da18ec81cef45618093a821d74bb14b87da5d72"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -74,9 +74,9 @@
         },
         "genson": {
             "hashes": [
-                "sha256:993ae47581a2e2c04e166c1ee9103a95d2ac4de0b0f1e8cb5156c983576f5dad"
+                "sha256:40b8faa17f53240f224d683d7a302b5f7b35eb7ab2aba1c223a58a38b8d09c42"
             ],
-            "version": "==1.2.0"
+            "version": "==1.2.1"
         },
         "hvac": {
             "hashes": [
@@ -226,6 +226,13 @@
             ],
             "index": "pypi",
             "version": "==3.1.2"
+        },
+        "robotframework-ftplibrary": {
+            "hashes": [
+                "sha256:67d31766335253acc011d007b683d8b2c7e95c831924a15653f47bca9a4a4f3c"
+            ],
+            "index": "pypi",
+            "version": "==1.9"
         },
         "robotframework-seleniumlibrary": {
             "hashes": [
