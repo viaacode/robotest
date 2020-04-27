@@ -4,7 +4,7 @@ Documentation   Test #xxx\n
 ...             See:
 Library         REST    https://${mediahaven.rest.url}/mediahaven-rest-api/resources
 Library         Vault/Vault.py  %{VAULT_ADDR}  %{GITHUB_TOKEN}  False
-Resource        rest-resource.robot
+Resource        ../http.resource
 
 
 *** Test Cases ***

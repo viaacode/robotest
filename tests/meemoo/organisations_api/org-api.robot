@@ -25,3 +25,16 @@ Test getting an or-id (lowercase)
   String      $.status            success
   String      $.data.or_id        OR-rf5kf25
   String      $.data.cp_name_mam  vrt
+
+Test the completeness of the API data
+  [Tags]      meemoo  rest  prd  qas
+  [Documentation]   For certain OR-id's, the response should be complete.
+  Get         /org/OR-rf5kf25
+  Output      response body
+  Integer     response status         200
+  String      $.status                success
+  String      $.data.or_id            OR-rf5kf25
+  String      $.data.cp_name_catpro   minLength=1     
+  String      $.data.description      minLength=1     
+  String      $.data.accountmanager   minLength=1     
+  Expect response   ${CURDIR}/schemas/org_api_completeness.json

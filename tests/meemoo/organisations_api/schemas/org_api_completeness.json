@@ -1,0 +1,133 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "default": true,
+    "description": "Tests.Meemoo.Org-Api.Schemagen: Test getting an OR-id and generate a schema",
+    "examples": [],
+    "properties": {
+        "request": {
+            "properties": {
+                "body": {
+                    "type": "null"
+                },
+                "query": {
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "response": {
+            "properties": {
+                "body": {
+                    "properties": {
+                        "data": {
+                            "properties": {
+                                "accountmanager": {
+                                    "type": "string",
+                                    "minLength": 2
+                                },
+                                "category": {
+                                    "type": "string",
+                                    "minLength": 2
+                                },
+                                "contact_information": {
+                                    "properties": {
+                                        "email": {
+                                            "type": "string",
+                                            "format": "email",
+                                            "minLength": 5
+                                        },
+                                        "form_url": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "minLength": 5
+                                        },
+                                        "logoUrl": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "minLength": 5
+                                        },
+                                        "phone": {
+                                            "type": "string",
+                                            "minLength": 2
+                                        },
+                                        "website": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "minLength": 5
+                                        }
+                                    },
+                                    "required": [
+                                        "email",
+                                        "form_url",
+                                        "logoUrl",
+                                        "phone",
+                                        "website"
+                                    ],
+                                    "type": "object"
+                                },
+                                "cp_name": {
+                                    "type": "string",
+                                    "minLength": 2
+                                },
+                                "cp_name_catpro": {
+                                    "type": "string",
+                                    "minLength": 2
+                                },
+                                "cp_name_mam": {
+                                    "type": "string",
+                                    "minLength": 2
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "minLength": 2
+                                },
+                                "or_id": {
+                                    "type": "string",
+                                    "pattern": "^OR-[a-z0-9]{7}$",
+                                    "description": "An OR-id is the literal string 'OR-' followed by a 7-digit pid"
+                                },
+                                "sector": {
+                                    "type": "string",
+                                    "minLength": 2
+                                }
+                            },
+                            "required": [
+                                "accountmanager",
+                                "category",
+                                "contact_information",
+                                "cp_name",
+                                "cp_name_catpro",
+                                "cp_name_mam",
+                                "description",
+                                "or_id",
+                                "sector"
+                            ],
+                            "type": "object"
+                        },
+                        "description": {
+                            "type": "string",
+                            "minLength": 2
+                        },
+                        "status": {
+                            "default": "success",
+                            "enum": [
+                                "success",
+                                "fail"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "data",
+                        "description",
+                        "status"
+                    ],
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "title": "GET a single organisation from {meemoo.services.org_api.url}",
+    "type": "object"
+}

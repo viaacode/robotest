@@ -33,6 +33,9 @@ Input Password
 Submit Credentials
     Submit Form
 
+Logout
+    Click Link      id:logout
+
 Index Page Should Be Open
     Wait Until Location Contains    index.php    
     Location Should Contain         index.php
