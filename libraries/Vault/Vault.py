@@ -8,7 +8,7 @@ from keywords import Keywords
 class Vault(Keywords):
     """"""
     ROBOT_LIBRARY_SCOPE = "TEST SUITE"
-    def __init__(self, url=None, token=None, ssl_verify=True):
+    def __init__(self, url, token, ssl_verify=True):
         self.client = self._init_client(url, token, ssl_verify)
 
     def _init_client(self, url, token, ssl_verify):

@@ -77,15 +77,15 @@ tests
 
 Four different filetypes:
 
-- `.robot` files
-  These are the files that contain the actaul tests.
-- `.resource` files
+- `.robot` files  
+  These are the files that contain the actual tests.
+- `.resource` files  
   These files containt higher-order keywords to be used in the actual test
 (`.robot`) files.
-- `.schemagen.robot` files
+- `.schemagen.robot` files  
   These files contain the code that generate schemas from HTTP-responses (be it
 json or xml).
-- `.json` files
+- `.json` files 
   These files contain the schemas generate by the `.schemagen` files.
 
 When running the tests, only the actual test files (`.robot` files) are
