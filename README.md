@@ -39,6 +39,70 @@ variables before running the tests.
 
 _TODO_: Refactor into external `robotframework-vault` library.
 
+## Test organisation and structure
+
+All tests are organised according to the following structure:
+
+```
+tests
+└── platform
+    └── system
+        └── function
+```
+
+For instance:
+
+```
+tests
+├── mediahaven
+│   ├── ftp-tra.robot
+│   ├── http.resource
+│   ├── monitoring
+│   │   └── monitoring.robot
+│   ├── oai-pmh
+│   │   └── oai-pmh.robot
+│   └── rest
+│       └── rest-users.robot
+└── meemoo
+    ├── organisations_api
+    │   ├── org-api.robot
+    │   └── schemas
+    │       └── org_api.json
+    └── pid_webservice
+        ├── pid_webservice.robot
+        ├── pid_webservice.schemagen.robot
+        └── schemas
+            └── pid_webservice.json
+```
+
+Four different filetypes:
+
+- `.robot` files
+  These are the files that contain the actaul tests.
+- `.resource` files
+  These files containt higher-order keywords to be used in the actual test
+(`.robot`) files.
+- `.schemagen.robot` files
+  These files contain the code that generate schemas from HTTP-responses (be it
+json or xml).
+- `.json` files
+  These files contain the schemas generate by the `.schemagen` files.
+
+When running the tests, only the actual test files (`.robot` files) are
+executed. The `.schemagen` files are always excluded based on their tag
+(`schemagen`). This behaviour is controlled by the `<env>.args` files. For
+example `int.args`:
+
+
+```
+--logtitle Test Log: INT
+--reporttitle Test Report: INT
+--pythonpath ./libraries
+--exclude schemagen
+--include int
+--norpa
+```
+
 ## Running the tests
 
 Select the environment to test by setting an environment variable (`int`, `qas`
