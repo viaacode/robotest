@@ -12,12 +12,13 @@ Test generic local users
   [Tags]      rest  mediahaven  login   prd  qas  int
   &{json_string}=   GetSecret   mediahaven.generic_users
   ${json_users}=    Evaluate    json.loads("""${json_string.json}""")   json
-  : FOR    ${user}     IN      @{json_users}
-  \   Log To Console    Testing: ${user["username"]}
-  \   Set auth header   ${user["username"]}  ${user["passwd"]}
-  \   Get         /users/current
-  \   Object      response body
-  \   Integer     response status   200
-  \   String      $.login           ${user["username"]}
-  \   Expect Response   ${CURDIR}/schemas/users_current.json
-  \   Clear Expectations
+  FOR    ${user}     IN      @{json_users}
+    Log To Console    Testing: ${user["username"]}
+    Set auth header   ${user["username"]}  ${user["passwd"]}
+    Get         /users/current
+    Object      response body
+    Integer     response status   200
+    String      $.login           ${user["username"]}
+    Expect Response   ${CURDIR}/schemas/users_current.json
+    Clear Expectations
+  END
