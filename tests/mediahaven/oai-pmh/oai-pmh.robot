@@ -100,3 +100,13 @@ Test GetRecord oai_dc by umid
     ${record}=              Get Element     ${root}                                 GetRecord/record
     Element Text Should Be  ${record}       umid:${mediahaven.oai_pmh.data.umid}    header/identifier
     Element Should Exist    ${record}       metadata/dc
+
+Test UnknownVerb
+    [Tags]                          oai_pmh  mediahaven  prd  qas  int
+    ${resp}=                        Get Request     oai_pmh     ?verb=UnknownVerb
+    Status Should Be                200             ${resp}
+    Log                             ${resp.content}
+    ${root}=                        Parse XML       ${resp.content}
+    Should Be Equal                 ${root.tag}     OAI-PMH
+    ${error}=                       Get Element     ${root}     error
+    Element Attribute Should Be     ${error}        code        badVerb
