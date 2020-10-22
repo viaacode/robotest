@@ -37,6 +37,24 @@ Test ListSets
     Should Be Equal         ${root.tag}     OAI-PMH
     Element Should Exist    ${root}         ListSets/set
 
+Test ListRecords mets
+    [Tags]                  oai_pmh  mediahaven  prd  qas  int
+    ${resp}=                Get Request     oai_pmh     ?verb=ListRecords&metadataPrefix=mets
+    Status Should Be        200             ${resp}
+    Log                     ${resp.content}
+    ${root}=                Parse XML       ${resp.content}
+    Should Be Equal         ${root.tag}     OAI-PMH
+    Element Should Exist    ${root}         ListRecords/record
+
+Test ListRecords oai_dc
+    [Tags]                  oai_pmh  mediahaven  prd  qas  int
+    ${resp}=                Get Request     oai_pmh     ?verb=ListRecords&metadataPrefix=oai_dc
+    Status Should Be        200             ${resp}
+    Log                     ${resp.content}
+    ${root}=                Parse XML       ${resp.content}
+    Should Be Equal         ${root.tag}     OAI-PMH
+    Element Should Exist    ${root}         ListRecords/record
+
 Test ListIdentifiers
     [Tags]                  oai_pmh  mediahaven  prd  qas  int
     ${resp}=                Get Request     oai_pmh     ?verb=ListIdentifiers&metadataPrefix=mets
