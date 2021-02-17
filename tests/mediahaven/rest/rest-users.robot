@@ -10,9 +10,9 @@ Resource        ../http.resource
 *** Test Cases ***
 Test generic local users
   [Tags]      rest  mediahaven  login   prd  qas  int
-  &{json_string}=   GetSecret   mediahaven.generic_users
-  ${json_users}=    Evaluate    json.loads("""${json_string.json}""")   json
-  FOR    ${user}     IN      @{json_users}
+  &{json_string}=    GetSecret     mediahaven.generic_local_users.${environment.short_name}
+  ${generic_users}=  Set Variable  ${json_string.json}
+  FOR    ${user}     IN      @{generic_users}
     Log To Console    Testing: ${user["username"]}
     Set auth header   ${user["username"]}  ${user["passwd"]}
     Get         /users/current
@@ -22,3 +22,4 @@ Test generic local users
     Expect Response   ${CURDIR}/schemas/users_current.json
     Clear Expectations
   END
+  
