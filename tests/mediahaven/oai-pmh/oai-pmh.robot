@@ -26,7 +26,7 @@ Test ListMetadataFormats
     Should Be Equal     ${root.tag}     OAI-PMH
     ${lmf}=             Get Element     ${root}     ListMetadataFormats
     ${formats}=         Get Elements    ${lmf}      metadataFormat
-    Length Should Be    ${formats}      4
+    Length Should Be    ${formats}      6
 
 Test ListSets
     [Tags]                  oai_pmh  mediahaven  prd  qas  int
