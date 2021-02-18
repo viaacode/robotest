@@ -15,8 +15,8 @@ Some links about:
 ## Prerequisites
 
 - Python >=3.6
-- [Geckodriver](https://github.com/mozilla/geckodriver/releases/latest) (Download and untar to `/usr/local/bin`)
-- [pipenv](https://pipenv-fork.readthedocs.io/en/latest/)
+- [Geckodriver](run `brew install geckodriver` on Mac, or https://github.com/mozilla/geckodriver/releases/latest)
+- [pipenv](run `brew install pipenv` on Mac, or https://pipenv-fork.readthedocs.io/en/latest/)
 
 ## Installation
 
