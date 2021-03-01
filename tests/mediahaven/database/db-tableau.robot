@@ -7,8 +7,8 @@ Resource          db-resource.robot
 *** Test Cases ***
 Tableau Login to MH postgresql db
     [Tags]    tableau  login  mediahaven  prd  qas  int
-    ${username}=    Get username from vault   mediahaven_tableau
-    ${passwd}=      Get passwd from vault     mediahaven_tableau
+    ${username}=    Get username from vault   mediahaven.tableau
+    ${passwd}=      Get passwd from vault     mediahaven.tableau
     Connect To Mediahaven DB    ${username}     ${passwd}
     Sips View Should Be Readable
     [Teardown]    Disconnect From Mediahaven DB
