@@ -1,0 +1,1441 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "GET https://archief-qas.viaa.be/mediahaven-rest-api/resources/media/e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [],
+    "required": [
+        "Administrative",
+        "RightsManagement",
+        "Structural",
+        "Internal",
+        "Dynamic",
+        "Descriptive",
+        "Technical",
+        "Context"
+    ],
+    "properties": {
+        "Administrative": {
+            "$id": "#/properties/Administrative",
+            "type": "object",
+            "title": "The Administrative schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "required": [
+                "LastModifiedDate",
+                "IsSynchronized",
+                "IsOriginal",
+                "OrganisationName",
+                "Workflow",
+                "IsPreservation",
+                "DepartmentName",
+                "ArchiveDate",
+                "OrganisationLongName",
+                "RecordType",
+                "RecordStatus",
+                "IsAccess",
+                "ExternalId",
+                "Type",
+                "OrganisationExternalId",
+                "IngestTape"
+            ],
+            "properties": {
+                "LastModifiedDate": {
+                    "$id": "#/properties/Administrative/properties/LastModifiedDate",
+                    "type": "string",
+                    "title": "The LastModifiedDate schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "IsSynchronized": {
+                    "$id": "#/properties/Administrative/properties/IsSynchronized",
+                    "type": "boolean",
+                    "title": "The IsSynchronized schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false
+                },
+                "IsOriginal": {
+                    "$id": "#/properties/Administrative/properties/IsOriginal",
+                    "type": "boolean",
+                    "title": "The IsOriginal schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false
+                },
+                "OrganisationName": {
+                    "$id": "#/properties/Administrative/properties/OrganisationName",
+                    "type": "string",
+                    "title": "The OrganisationName schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "Workflow": {
+                    "$id": "#/properties/Administrative/properties/Workflow",
+                    "type": "string",
+                    "title": "The Workflow schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "IsPreservation": {
+                    "$id": "#/properties/Administrative/properties/IsPreservation",
+                    "type": "boolean",
+                    "title": "The IsPreservation schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false
+                },
+                "DepartmentName": {
+                    "$id": "#/properties/Administrative/properties/DepartmentName",
+                    "type": "string",
+                    "title": "The DepartmentName schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "ArchiveDate": {
+                    "$id": "#/properties/Administrative/properties/ArchiveDate",
+                    "type": "string",
+                    "title": "The ArchiveDate schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "OrganisationLongName": {
+                    "$id": "#/properties/Administrative/properties/OrganisationLongName",
+                    "type": "string",
+                    "title": "The OrganisationLongName schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "RecordType": {
+                    "$id": "#/properties/Administrative/properties/RecordType",
+                    "type": "string",
+                    "title": "The RecordType schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "RecordStatus": {
+                    "$id": "#/properties/Administrative/properties/RecordStatus",
+                    "type": "string",
+                    "title": "The RecordStatus schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "IsAccess": {
+                    "$id": "#/properties/Administrative/properties/IsAccess",
+                    "type": "boolean",
+                    "title": "The IsAccess schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false
+                },
+                "ExternalId": {
+                    "$id": "#/properties/Administrative/properties/ExternalId",
+                    "type": "string",
+                    "title": "The ExternalId schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "Type": {
+                    "$id": "#/properties/Administrative/properties/Type",
+                    "type": "string",
+                    "title": "The Type schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "OrganisationExternalId": {
+                    "$id": "#/properties/Administrative/properties/OrganisationExternalId",
+                    "type": "string",
+                    "title": "The OrganisationExternalId schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "IngestTape": {
+                    "$id": "#/properties/Administrative/properties/IngestTape",
+                    "type": "null",
+                    "title": "The IngestTape schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                }
+            },
+            "additionalProperties": true
+        },
+        "RightsManagement": {
+            "$id": "#/properties/RightsManagement",
+            "type": "object",
+            "title": "The RightsManagement schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "required": [
+                "Permissions",
+                "ExpiryDate",
+                "ExpiryStatus"
+            ],
+            "properties": {
+                "Permissions": {
+                    "$id": "#/properties/RightsManagement/properties/Permissions",
+                    "type": "object",
+                    "title": "The Permissions schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [
+                        "Export",
+                        "Write",
+                        "Read"
+                    ],
+                    "properties": {
+                        "Export": {
+                            "$id": "#/properties/RightsManagement/properties/Permissions/properties/Export",
+                            "type": "array",
+                            "title": "The Export schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": [],
+                            "additionalItems": true,
+                            "items": {
+                                "$id": "#/properties/RightsManagement/properties/Permissions/properties/Export/items",
+                                "type": "string",
+                                "title": "The items schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": ""
+                            }
+                        },
+                        "Write": {
+                            "$id": "#/properties/RightsManagement/properties/Permissions/properties/Write",
+                            "type": "array",
+                            "title": "The Write schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": [],
+                            "additionalItems": true,
+                            "items": {
+                                "$id": "#/properties/RightsManagement/properties/Permissions/properties/Write/items",
+                                "type": "string",
+                                "title": "The items schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": ""
+                            }
+                        },
+                        "Read": {
+                            "$id": "#/properties/RightsManagement/properties/Permissions/properties/Read",
+                            "type": "array",
+                            "title": "The Read schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": [],
+                            "additionalItems": true,
+                            "items": {
+                                "$id": "#/properties/RightsManagement/properties/Permissions/properties/Read/items",
+                                "type": "string",
+                                "title": "The items schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": ""
+                            }
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "ExpiryDate": {
+                    "$id": "#/properties/RightsManagement/properties/ExpiryDate",
+                    "type": "null",
+                    "title": "The ExpiryDate schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "ExpiryStatus": {
+                    "$id": "#/properties/RightsManagement/properties/ExpiryStatus",
+                    "type": "null",
+                    "title": "The ExpiryStatus schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                }
+            },
+            "additionalProperties": true
+        },
+        "Structural": {
+            "$id": "#/properties/Structural",
+            "type": "object",
+            "title": "The Structural schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "required": [
+                "FragmentEndTimeCode",
+                "HasChildren",
+                "FragmentStartFrames",
+                "FragmentDurationFrames",
+                "FragmentDurationTimeCode",
+                "FragmentStartTimeCode",
+                "FragmentEndFrames",
+                "Versioning",
+                "Sets",
+                "Collections",
+                "Newspapers",
+                "Relations",
+                "Fragments"
+            ],
+            "properties": {
+                "FragmentEndTimeCode": {
+                    "$id": "#/properties/Structural/properties/FragmentEndTimeCode",
+                    "type": "string",
+                    "title": "The FragmentEndTimeCode schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "HasChildren": {
+                    "$id": "#/properties/Structural/properties/HasChildren",
+                    "type": "boolean",
+                    "title": "The HasChildren schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false
+                },
+                "FragmentStartFrames": {
+                    "$id": "#/properties/Structural/properties/FragmentStartFrames",
+                    "type": "integer",
+                    "title": "The FragmentStartFrames schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "FragmentDurationFrames": {
+                    "$id": "#/properties/Structural/properties/FragmentDurationFrames",
+                    "type": "integer",
+                    "title": "The FragmentDurationFrames schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "FragmentDurationTimeCode": {
+                    "$id": "#/properties/Structural/properties/FragmentDurationTimeCode",
+                    "type": "string",
+                    "title": "The FragmentDurationTimeCode schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "FragmentStartTimeCode": {
+                    "$id": "#/properties/Structural/properties/FragmentStartTimeCode",
+                    "type": "string",
+                    "title": "The FragmentStartTimeCode schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "FragmentEndFrames": {
+                    "$id": "#/properties/Structural/properties/FragmentEndFrames",
+                    "type": "integer",
+                    "title": "The FragmentEndFrames schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "Versioning": {
+                    "$id": "#/properties/Structural/properties/Versioning",
+                    "type": "object",
+                    "title": "The Versioning schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [
+                        "Status",
+                        "Version"
+                    ],
+                    "properties": {
+                        "Status": {
+                            "$id": "#/properties/Structural/properties/Versioning/properties/Status",
+                            "type": "string",
+                            "title": "The Status schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": ""
+                        },
+                        "Version": {
+                            "$id": "#/properties/Structural/properties/Versioning/properties/Version",
+                            "type": "integer",
+                            "title": "The Version schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": 0
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "Sets": {
+                    "$id": "#/properties/Structural/properties/Sets",
+                    "type": "object",
+                    "title": "The Sets schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [
+                        "Set"
+                    ],
+                    "properties": {
+                        "Set": {
+                            "$id": "#/properties/Structural/properties/Sets/properties/Set",
+                            "type": "array",
+                            "title": "The Set schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": [],
+                            "additionalItems": true
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "Collections": {
+                    "$id": "#/properties/Structural/properties/Collections",
+                    "type": "object",
+                    "title": "The Collections schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [
+                        "Collection"
+                    ],
+                    "properties": {
+                        "Collection": {
+                            "$id": "#/properties/Structural/properties/Collections/properties/Collection",
+                            "type": "array",
+                            "title": "The Collection schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": [],
+                            "additionalItems": true
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "Newspapers": {
+                    "$id": "#/properties/Structural/properties/Newspapers",
+                    "type": "object",
+                    "title": "The Newspapers schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [
+                        "Newspaper"
+                    ],
+                    "properties": {
+                        "Newspaper": {
+                            "$id": "#/properties/Structural/properties/Newspapers/properties/Newspaper",
+                            "type": "array",
+                            "title": "The Newspaper schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": [],
+                            "additionalItems": true
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "Relations": {
+                    "$id": "#/properties/Structural/properties/Relations",
+                    "type": "object",
+                    "title": "The Relations schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [],
+                    "additionalProperties": true
+                },
+                "Fragments": {
+                    "$id": "#/properties/Structural/properties/Fragments",
+                    "type": "object",
+                    "title": "The Fragments schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [],
+                    "additionalProperties": true
+                }
+            },
+            "additionalProperties": true
+        },
+        "Internal": {
+            "$id": "#/properties/Internal",
+            "type": "object",
+            "title": "The Internal schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "required": [
+                "PathToVideo",
+                "OriginalStatus",
+                "PathToKeyframe",
+                "IsFragment",
+                "UploadedById",
+                "HasKeyframes",
+                "Browses",
+                "MediaObjectId",
+                "ArchiveStatus",
+                "BrowseStatus",
+                "RecordId",
+                "IsInIngestSpace",
+                "OrganisationId",
+                "FragmentId",
+                "PathToKeyframeThumb",
+                "ContainsGeoData",
+                "DepartmentId",
+                "IngestSpaceId"
+            ],
+            "properties": {
+                "PathToVideo": {
+                    "$id": "#/properties/Internal/properties/PathToVideo",
+                    "type": "string",
+                    "title": "The PathToVideo schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "OriginalStatus": {
+                    "$id": "#/properties/Internal/properties/OriginalStatus",
+                    "type": "string",
+                    "title": "The OriginalStatus schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "PathToKeyframe": {
+                    "$id": "#/properties/Internal/properties/PathToKeyframe",
+                    "type": "string",
+                    "title": "The PathToKeyframe schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "IsFragment": {
+                    "$id": "#/properties/Internal/properties/IsFragment",
+                    "type": "boolean",
+                    "title": "The IsFragment schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false
+                },
+                "UploadedById": {
+                    "$id": "#/properties/Internal/properties/UploadedById",
+                    "type": "string",
+                    "title": "The UploadedById schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "HasKeyframes": {
+                    "$id": "#/properties/Internal/properties/HasKeyframes",
+                    "type": "boolean",
+                    "title": "The HasKeyframes schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false
+                },
+                "Browses": {
+                    "$id": "#/properties/Internal/properties/Browses",
+                    "type": "object",
+                    "title": "The Browses schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [
+                        "Browse"
+                    ],
+                    "properties": {
+                        "Browse": {
+                            "$id": "#/properties/Internal/properties/Browses/properties/Browse",
+                            "type": "array",
+                            "title": "The Browse schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": [],
+                            "additionalItems": true,
+                            "items": {
+                                "$id": "#/properties/Internal/properties/Browses/properties/Browse/items",
+                                "type": "object",
+                                "title": "The items schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "required": [
+                                    "BaseUrl",
+                                    "PathToKeyframe",
+                                    "PathToKeyframeThumb",
+                                    "PathToVideo",
+                                    "HasKeyframes",
+                                    "Container",
+                                    "Label",
+                                    "FileSize",
+                                    "AudioTracks",
+                                    "Height",
+                                    "VideoCodec",
+                                    "Width",
+                                    "AudioChannels",
+                                    "AudioCodec",
+                                    "BitRate",
+                                    "AudioSampleRate",
+                                    "VideoBitRate",
+                                    "AudioBitRate",
+                                    "VideoFps"
+                                ],
+                                "properties": {
+                                    "BaseUrl": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/BaseUrl",
+                                        "type": "string",
+                                        "title": "The BaseUrl schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": ""
+                                    },
+                                    "PathToKeyframe": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/PathToKeyframe",
+                                        "type": "string",
+                                        "title": "The PathToKeyframe schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": ""
+                                    },
+                                    "PathToKeyframeThumb": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/PathToKeyframeThumb",
+                                        "type": "string",
+                                        "title": "The PathToKeyframeThumb schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": ""
+                                    },
+                                    "PathToVideo": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/PathToVideo",
+                                        "type": "string",
+                                        "title": "The PathToVideo schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": ""
+                                    },
+                                    "HasKeyframes": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/HasKeyframes",
+                                        "type": "boolean",
+                                        "title": "The HasKeyframes schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": false
+                                    },
+                                    "Container": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/Container",
+                                        "type": "string",
+                                        "title": "The Container schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": ""
+                                    },
+                                    "Label": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/Label",
+                                        "type": "string",
+                                        "title": "The Label schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": ""
+                                    },
+                                    "FileSize": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/FileSize",
+                                        "type": "integer",
+                                        "title": "The FileSize schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0
+                                    },
+                                    "AudioTracks": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/AudioTracks",
+                                        "type": "object",
+                                        "title": "The AudioTracks schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": {},
+                                        "required": [
+                                            "Track"
+                                        ],
+                                        "properties": {
+                                            "Track": {
+                                                "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/AudioTracks/properties/Track",
+                                                "type": "array",
+                                                "title": "The Track schema",
+                                                "description": "An explanation about the purpose of this instance.",
+                                                "default": [],
+                                                "additionalItems": true,
+                                                "items": {
+                                                    "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/AudioTracks/properties/Track/items",
+                                                    "type": "object",
+                                                    "title": "The items schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": {},
+                                                    "required": [
+                                                        "Channels"
+                                                    ],
+                                                    "properties": {
+                                                        "Channels": {
+                                                            "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/AudioTracks/properties/Track/items/properties/Channels",
+                                                            "type": "integer",
+                                                            "title": "The Channels schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": 0
+                                                        }
+                                                    },
+                                                    "additionalProperties": true
+                                                }
+                                            }
+                                        },
+                                        "additionalProperties": true
+                                    },
+                                    "Height": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/Height",
+                                        "type": "integer",
+                                        "title": "The Height schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0
+                                    },
+                                    "VideoCodec": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/VideoCodec",
+                                        "type": "string",
+                                        "title": "The VideoCodec schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": ""
+                                    },
+                                    "Width": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/Width",
+                                        "type": "integer",
+                                        "title": "The Width schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0
+                                    },
+                                    "AudioChannels": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/AudioChannels",
+                                        "type": "integer",
+                                        "title": "The AudioChannels schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0
+                                    },
+                                    "AudioCodec": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/AudioCodec",
+                                        "type": "string",
+                                        "title": "The AudioCodec schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": ""
+                                    },
+                                    "BitRate": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/BitRate",
+                                        "type": "integer",
+                                        "title": "The BitRate schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0
+                                    },
+                                    "AudioSampleRate": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/AudioSampleRate",
+                                        "type": "integer",
+                                        "title": "The AudioSampleRate schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0
+                                    },
+                                    "VideoBitRate": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/VideoBitRate",
+                                        "type": "integer",
+                                        "title": "The VideoBitRate schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0
+                                    },
+                                    "AudioBitRate": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/AudioBitRate",
+                                        "type": "integer",
+                                        "title": "The AudioBitRate schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0
+                                    },
+                                    "VideoFps": {
+                                        "$id": "#/properties/Internal/properties/Browses/properties/Browse/items/properties/VideoFps",
+                                        "type": "string",
+                                        "title": "The VideoFps schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": ""
+                                    }
+                                },
+                                "additionalProperties": true
+                            }
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "MediaObjectId": {
+                    "$id": "#/properties/Internal/properties/MediaObjectId",
+                    "type": "string",
+                    "title": "The MediaObjectId schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "ArchiveStatus": {
+                    "$id": "#/properties/Internal/properties/ArchiveStatus",
+                    "type": "string",
+                    "title": "The ArchiveStatus schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "BrowseStatus": {
+                    "$id": "#/properties/Internal/properties/BrowseStatus",
+                    "type": "string",
+                    "title": "The BrowseStatus schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "RecordId": {
+                    "$id": "#/properties/Internal/properties/RecordId",
+                    "type": "string",
+                    "title": "The RecordId schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "IsInIngestSpace": {
+                    "$id": "#/properties/Internal/properties/IsInIngestSpace",
+                    "type": "boolean",
+                    "title": "The IsInIngestSpace schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false
+                },
+                "OrganisationId": {
+                    "$id": "#/properties/Internal/properties/OrganisationId",
+                    "type": "string",
+                    "title": "The OrganisationId schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "FragmentId": {
+                    "$id": "#/properties/Internal/properties/FragmentId",
+                    "type": "string",
+                    "title": "The FragmentId schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "PathToKeyframeThumb": {
+                    "$id": "#/properties/Internal/properties/PathToKeyframeThumb",
+                    "type": "string",
+                    "title": "The PathToKeyframeThumb schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "ContainsGeoData": {
+                    "$id": "#/properties/Internal/properties/ContainsGeoData",
+                    "type": "boolean",
+                    "title": "The ContainsGeoData schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false
+                },
+                "DepartmentId": {
+                    "$id": "#/properties/Internal/properties/DepartmentId",
+                    "type": "string",
+                    "title": "The DepartmentId schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "IngestSpaceId": {
+                    "$id": "#/properties/Internal/properties/IngestSpaceId",
+                    "type": "null",
+                    "title": "The IngestSpaceId schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                }
+            },
+            "additionalProperties": true
+        },
+        "Dynamic": {
+            "$id": "#/properties/Dynamic",
+            "type": "object",
+            "title": "The Dynamic schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "required": [
+                "md5_viaa",
+                "type_viaa",
+                "ebu_objectType",
+                "dc_identifier_localids",
+                "dc_description_lang",
+                "dc_title",
+                "dcterms_created",
+                "vrt_status",
+                "dcterms_issued",
+                "sp_name",
+                "dc_identifier_localid",
+                "PID",
+                "CP",
+                "vrt_has_been_broadcasted",
+                "CP_id"
+            ],
+            "properties": {
+                "md5_viaa": {
+                    "$id": "#/properties/Dynamic/properties/md5_viaa",
+                    "type": "string",
+                    "title": "The md5_viaa schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "type_viaa": {
+                    "$id": "#/properties/Dynamic/properties/type_viaa",
+                    "type": "string",
+                    "title": "The type_viaa schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "ebu_objectType": {
+                    "$id": "#/properties/Dynamic/properties/ebu_objectType",
+                    "type": "string",
+                    "title": "The ebu_objectType schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "dc_identifier_localids": {
+                    "$id": "#/properties/Dynamic/properties/dc_identifier_localids",
+                    "type": "object",
+                    "title": "The dc_identifier_localids schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [
+                        "MEDIA_ID"
+                    ],
+                    "properties": {
+                        "MEDIA_ID": {
+                            "$id": "#/properties/Dynamic/properties/dc_identifier_localids/properties/MEDIA_ID",
+                            "type": "array",
+                            "title": "The MEDIA_ID schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": [],
+                            "additionalItems": true,
+                            "items": {
+                                "$id": "#/properties/Dynamic/properties/dc_identifier_localids/properties/MEDIA_ID/items",
+                                "type": "string",
+                                "title": "The items schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": ""
+                            }
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "dc_description_lang": {
+                    "$id": "#/properties/Dynamic/properties/dc_description_lang",
+                    "type": "string",
+                    "title": "The dc_description_lang schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "dc_title": {
+                    "$id": "#/properties/Dynamic/properties/dc_title",
+                    "type": "string",
+                    "title": "The dc_title schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "dcterms_created": {
+                    "$id": "#/properties/Dynamic/properties/dcterms_created",
+                    "type": "string",
+                    "title": "The dcterms_created schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "vrt_status": {
+                    "$id": "#/properties/Dynamic/properties/vrt_status",
+                    "type": "string",
+                    "title": "The vrt_status schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "dcterms_issued": {
+                    "$id": "#/properties/Dynamic/properties/dcterms_issued",
+                    "type": "string",
+                    "title": "The dcterms_issued schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "sp_name": {
+                    "$id": "#/properties/Dynamic/properties/sp_name",
+                    "type": "string",
+                    "title": "The sp_name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "dc_identifier_localid": {
+                    "$id": "#/properties/Dynamic/properties/dc_identifier_localid",
+                    "type": "string",
+                    "title": "The dc_identifier_localid schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "PID": {
+                    "$id": "#/properties/Dynamic/properties/PID",
+                    "type": "string",
+                    "title": "The PID schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "CP": {
+                    "$id": "#/properties/Dynamic/properties/CP",
+                    "type": "string",
+                    "title": "The CP schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "vrt_has_been_broadcasted": {
+                    "$id": "#/properties/Dynamic/properties/vrt_has_been_broadcasted",
+                    "type": "string",
+                    "title": "The vrt_has_been_broadcasted schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "CP_id": {
+                    "$id": "#/properties/Dynamic/properties/CP_id",
+                    "type": "string",
+                    "title": "The CP_id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                }
+            },
+            "additionalProperties": true
+        },
+        "Descriptive": {
+            "$id": "#/properties/Descriptive",
+            "type": "object",
+            "title": "The Descriptive schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "required": [
+                "CreationDate",
+                "UploadedBy",
+                "KeyframeStart",
+                "OriginalFilename",
+                "Title",
+                "RightsOwner",
+                "Description",
+                "Rights",
+                "Keywords",
+                "Categories",
+                "Publisher",
+                "Authors",
+                "Location",
+                "Address",
+                "NonPreferredTerm",
+                "Publications"
+            ],
+            "properties": {
+                "CreationDate": {
+                    "$id": "#/properties/Descriptive/properties/CreationDate",
+                    "type": "string",
+                    "title": "The CreationDate schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "UploadedBy": {
+                    "$id": "#/properties/Descriptive/properties/UploadedBy",
+                    "type": "string",
+                    "title": "The UploadedBy schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "KeyframeStart": {
+                    "$id": "#/properties/Descriptive/properties/KeyframeStart",
+                    "type": "integer",
+                    "title": "The KeyframeStart schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "OriginalFilename": {
+                    "$id": "#/properties/Descriptive/properties/OriginalFilename",
+                    "type": "string",
+                    "title": "The OriginalFilename schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "Title": {
+                    "$id": "#/properties/Descriptive/properties/Title",
+                    "type": "string",
+                    "title": "The Title schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "RightsOwner": {
+                    "$id": "#/properties/Descriptive/properties/RightsOwner",
+                    "type": "string",
+                    "title": "The RightsOwner schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "Description": {
+                    "$id": "#/properties/Descriptive/properties/Description",
+                    "type": "null",
+                    "title": "The Description schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "Rights": {
+                    "$id": "#/properties/Descriptive/properties/Rights",
+                    "type": "null",
+                    "title": "The Rights schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "Keywords": {
+                    "$id": "#/properties/Descriptive/properties/Keywords",
+                    "type": "object",
+                    "title": "The Keywords schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [
+                        "Keyword"
+                    ],
+                    "properties": {
+                        "Keyword": {
+                            "$id": "#/properties/Descriptive/properties/Keywords/properties/Keyword",
+                            "type": "array",
+                            "title": "The Keyword schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": [],
+                            "additionalItems": true
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "Categories": {
+                    "$id": "#/properties/Descriptive/properties/Categories",
+                    "type": "object",
+                    "title": "The Categories schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [
+                        "Category"
+                    ],
+                    "properties": {
+                        "Category": {
+                            "$id": "#/properties/Descriptive/properties/Categories/properties/Category",
+                            "type": "array",
+                            "title": "The Category schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": [],
+                            "additionalItems": true
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "Publisher": {
+                    "$id": "#/properties/Descriptive/properties/Publisher",
+                    "type": "null",
+                    "title": "The Publisher schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "Authors": {
+                    "$id": "#/properties/Descriptive/properties/Authors",
+                    "type": "object",
+                    "title": "The Authors schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [],
+                    "additionalProperties": true
+                },
+                "Location": {
+                    "$id": "#/properties/Descriptive/properties/Location",
+                    "type": "null",
+                    "title": "The Location schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "Address": {
+                    "$id": "#/properties/Descriptive/properties/Address",
+                    "type": "object",
+                    "title": "The Address schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [],
+                    "additionalProperties": true
+                },
+                "NonPreferredTerm": {
+                    "$id": "#/properties/Descriptive/properties/NonPreferredTerm",
+                    "type": "null",
+                    "title": "The NonPreferredTerm schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "Publications": {
+                    "$id": "#/properties/Descriptive/properties/Publications",
+                    "type": "null",
+                    "title": "The Publications schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                }
+            },
+            "additionalProperties": true
+        },
+        "Technical": {
+            "$id": "#/properties/Technical",
+            "type": "object",
+            "title": "The Technical schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "required": [
+                "ImageQuality",
+                "AudioTechnical",
+                "VideoTechnical",
+                "AudioTracks",
+                "PronomId",
+                "OriginalExtension",
+                "AudioCodec",
+                "AudioSampleRate",
+                "DurationFrames",
+                "VideoCodec",
+                "FileSize",
+                "ImageSize",
+                "EndFrames",
+                "MimeType",
+                "DurationTimeCode",
+                "StartFrames",
+                "Height",
+                "EndTimeCode",
+                "Width",
+                "Md5",
+                "AudioBitRate",
+                "StartTimeCode",
+                "VideoBitRate",
+                "ImageOrientation",
+                "AudioChannels",
+                "VideoFps",
+                "BitRate",
+                "VideoFormat"
+            ],
+            "properties": {
+                "ImageQuality": {
+                    "$id": "#/properties/Technical/properties/ImageQuality",
+                    "type": "string",
+                    "title": "The ImageQuality schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "AudioTechnical": {
+                    "$id": "#/properties/Technical/properties/AudioTechnical",
+                    "type": "string",
+                    "title": "The AudioTechnical schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "VideoTechnical": {
+                    "$id": "#/properties/Technical/properties/VideoTechnical",
+                    "type": "string",
+                    "title": "The VideoTechnical schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "AudioTracks": {
+                    "$id": "#/properties/Technical/properties/AudioTracks",
+                    "type": "object",
+                    "title": "The AudioTracks schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [
+                        "Track"
+                    ],
+                    "properties": {
+                        "Track": {
+                            "$id": "#/properties/Technical/properties/AudioTracks/properties/Track",
+                            "type": "array",
+                            "title": "The Track schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": [],
+                            "additionalItems": true,
+                            "items": {
+                                "$id": "#/properties/Technical/properties/AudioTracks/properties/Track/items",
+                                "type": "object",
+                                "title": "The items schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "required": [
+                                    "Channels"
+                                ],
+                                "properties": {
+                                    "Channels": {
+                                        "$id": "#/properties/Technical/properties/AudioTracks/properties/Track/items/properties/Channels",
+                                        "type": "integer",
+                                        "title": "The Channels schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0
+                                    }
+                                },
+                                "additionalProperties": true
+                            }
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "PronomId": {
+                    "$id": "#/properties/Technical/properties/PronomId",
+                    "type": "string",
+                    "title": "The PronomId schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "OriginalExtension": {
+                    "$id": "#/properties/Technical/properties/OriginalExtension",
+                    "type": "string",
+                    "title": "The OriginalExtension schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "AudioCodec": {
+                    "$id": "#/properties/Technical/properties/AudioCodec",
+                    "type": "string",
+                    "title": "The AudioCodec schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "AudioSampleRate": {
+                    "$id": "#/properties/Technical/properties/AudioSampleRate",
+                    "type": "integer",
+                    "title": "The AudioSampleRate schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "DurationFrames": {
+                    "$id": "#/properties/Technical/properties/DurationFrames",
+                    "type": "integer",
+                    "title": "The DurationFrames schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "VideoCodec": {
+                    "$id": "#/properties/Technical/properties/VideoCodec",
+                    "type": "string",
+                    "title": "The VideoCodec schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "FileSize": {
+                    "$id": "#/properties/Technical/properties/FileSize",
+                    "type": "integer",
+                    "title": "The FileSize schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "ImageSize": {
+                    "$id": "#/properties/Technical/properties/ImageSize",
+                    "type": "string",
+                    "title": "The ImageSize schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "EndFrames": {
+                    "$id": "#/properties/Technical/properties/EndFrames",
+                    "type": "integer",
+                    "title": "The EndFrames schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "MimeType": {
+                    "$id": "#/properties/Technical/properties/MimeType",
+                    "type": "string",
+                    "title": "The MimeType schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "DurationTimeCode": {
+                    "$id": "#/properties/Technical/properties/DurationTimeCode",
+                    "type": "string",
+                    "title": "The DurationTimeCode schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "StartFrames": {
+                    "$id": "#/properties/Technical/properties/StartFrames",
+                    "type": "integer",
+                    "title": "The StartFrames schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "Height": {
+                    "$id": "#/properties/Technical/properties/Height",
+                    "type": "integer",
+                    "title": "The Height schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "EndTimeCode": {
+                    "$id": "#/properties/Technical/properties/EndTimeCode",
+                    "type": "string",
+                    "title": "The EndTimeCode schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "Width": {
+                    "$id": "#/properties/Technical/properties/Width",
+                    "type": "integer",
+                    "title": "The Width schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "Md5": {
+                    "$id": "#/properties/Technical/properties/Md5",
+                    "type": "string",
+                    "title": "The Md5 schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "AudioBitRate": {
+                    "$id": "#/properties/Technical/properties/AudioBitRate",
+                    "type": "integer",
+                    "title": "The AudioBitRate schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "StartTimeCode": {
+                    "$id": "#/properties/Technical/properties/StartTimeCode",
+                    "type": "string",
+                    "title": "The StartTimeCode schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "VideoBitRate": {
+                    "$id": "#/properties/Technical/properties/VideoBitRate",
+                    "type": "integer",
+                    "title": "The VideoBitRate schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "ImageOrientation": {
+                    "$id": "#/properties/Technical/properties/ImageOrientation",
+                    "type": "string",
+                    "title": "The ImageOrientation schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "AudioChannels": {
+                    "$id": "#/properties/Technical/properties/AudioChannels",
+                    "type": "integer",
+                    "title": "The AudioChannels schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "VideoFps": {
+                    "$id": "#/properties/Technical/properties/VideoFps",
+                    "type": "string",
+                    "title": "The VideoFps schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": ""
+                },
+                "BitRate": {
+                    "$id": "#/properties/Technical/properties/BitRate",
+                    "type": "integer",
+                    "title": "The BitRate schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                },
+                "VideoFormat": {
+                    "$id": "#/properties/Technical/properties/VideoFormat",
+                    "type": "null",
+                    "title": "The VideoFormat schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                }
+            },
+            "additionalProperties": true
+        },
+        "Context": {
+            "$id": "#/properties/Context",
+            "type": "object",
+            "title": "The Context schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "required": [
+                "IsEditable",
+                "IsDeletable",
+                "IsPublic",
+                "IsExportable"
+            ],
+            "properties": {
+                "IsEditable": {
+                    "$id": "#/properties/Context/properties/IsEditable",
+                    "type": "boolean",
+                    "title": "The IsEditable schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false
+                },
+                "IsDeletable": {
+                    "$id": "#/properties/Context/properties/IsDeletable",
+                    "type": "boolean",
+                    "title": "The IsDeletable schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false
+                },
+                "IsPublic": {
+                    "$id": "#/properties/Context/properties/IsPublic",
+                    "type": "boolean",
+                    "title": "The IsPublic schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false
+                },
+                "IsExportable": {
+                    "$id": "#/properties/Context/properties/IsExportable",
+                    "type": "boolean",
+                    "title": "The IsExportable schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false
+                }
+            },
+            "additionalProperties": true
+        }
+    },
+    "additionalProperties": true
+}
