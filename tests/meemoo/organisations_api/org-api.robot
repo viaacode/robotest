@@ -23,6 +23,17 @@ Test getting an or-id (lowercase)
   String      $.data.or_id        OR-rf5kf25
   String      $.data.cp_name_mam  vrt
 
+Test getting an OR-id with less data
+  [Tags]      meemoo  rest  prd  qas
+  [Documentation]  Some OR-id's carry less data.\nThese should still validate against the schema.
+  Get         /org/OR-h41jm1d
+  Output      response body
+  Integer     response status     200
+  String      $.status            success
+  String      $.data.or_id        OR-h41jm1d
+  String      $.data.cp_name_mam  testbeeld
+  Clear Expectations
+
 Test the completeness of the API data
   [Tags]      meemoo  rest  prd  qas
   [Documentation]   For certain OR-id's, the response should be complete.
