@@ -1,0 +1,120 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string",
+            "default": "success"
+        },
+        "description": {
+            "type": "string",
+            "default": "Successfully found organization for LDAP id"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "or_id": {
+                    "type": "string",
+                    "pattern": "^OR-[a-z0-9]{7}$",
+                    "description": "An OR-id is the literal string 'OR-' followed by a 7-digit pid"
+                },
+                "cp_name_mam": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cp_name": {
+                    "type": "string"
+                },
+                "category": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sector": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cp_name_catpro": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "accountmanager": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "contact_information": {
+                    "type": "object",
+                    "properties": {
+                        "phone": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "website": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "email": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "logoUrl": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "form_url": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "email",
+                        "form_url",
+                        "logoUrl",
+                        "phone",
+                        "website"
+                    ]
+                }
+            },
+            "required": [
+                "accountmanager",
+                "category",
+                "contact_information",
+                "cp_name",
+                "cp_name_catpro",
+                "cp_name_mam",
+                "description",
+                "or_id",
+                "sector"
+            ]
+        }
+    },
+    "required": [
+        "data",
+        "description",
+        "status"
+    ]
+}
