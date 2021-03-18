@@ -14,15 +14,6 @@ Test getting an OR-id (uppercase)
   String      $.data.cp_name_mam  vrt
   Clear Expectations
 
-Test getting an or-id (lowercase)
-  [Tags]      meemoo  rest  prd  qas  regression
-  Get         /org/or-rf5kf25
-  Output      response body
-  Integer     response status     200
-  String      $.status            success
-  String      $.data.or_id        OR-rf5kf25
-  String      $.data.cp_name_mam  vrt
-
 Test getting an OR-id with less data
   [Tags]      meemoo  rest  prd  qas
   [Documentation]  Some OR-id's carry less data.\nThese should still validate against the schema.
