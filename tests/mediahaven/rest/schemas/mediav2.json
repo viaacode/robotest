@@ -6,1003 +6,928 @@
     "examples": [],
     "type": "object",
     "properties": {
-        "request": {
+        "body": {
             "type": "object",
             "properties": {
-                "body": {
-                    "type": "null"
+                "TotalNrOfResults": {
+                    "type": "integer",
+                    "default": 22008
                 },
-                "query": {
-                    "type": "object",
-                    "properties": {
-                        "nrOfResults": {
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "nrOfResults"
-                    ]
-                }
-            }
-        },
-        "response": {
-            "type": "object",
-            "properties": {
-                "body": {
-                    "type": "object",
-                    "properties": {
-                        "TotalNrOfResults": {
-                            "type": "integer",
-                            "default": 22008
-                        },
-                        "StartIndex": {
-                            "type": "integer",
-                            "default": 0
-                        },
-                        "MediaDataList": {
-                            "type": "array",
-                            "items": {
+                "StartIndex": {
+                    "type": "integer",
+                    "default": 0
+                },
+                "MediaDataList": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "Administrative": {
                                 "type": "object",
                                 "properties": {
-                                    "Administrative": {
-                                        "type": "object",
-                                        "properties": {
-                                            "LastModifiedDate": {
-                                                "type": "string"
-                                            },
-                                            "IsSynchronized": {
-                                                "type": "boolean"
-                                            },
-                                            "IsOriginal": {
-                                                "type": "boolean"
-                                            },
-                                            "OrganisationName": {
-                                                "type": "string"
-                                            },
-                                            "Workflow": {
-                                                "type": "string"
-                                            },
-                                            "IsPreservation": {
-                                                "type": "boolean"
-                                            },
-                                            "DepartmentName": {
-                                                "type": "string"
-                                            },
-                                            "ArchiveDate": {
-                                                "type": "string"
-                                            },
-                                            "OrganisationLongName": {
-                                                "type": "string"
-                                            },
-                                            "RecordType": {
-                                                "type": "string"
-                                            },
-                                            "RecordStatus": {
-                                                "type": "string"
-                                            },
-                                            "IsAccess": {
-                                                "type": "boolean"
-                                            },
-                                            "ExternalId": {
-                                                "type": "string"
-                                            },
-                                            "Type": {
-                                                "type": "string"
-                                            },
-                                            "OrganisationExternalId": {
-                                                "type": "string"
-                                            },
-                                            "IngestTape": {
-                                                "type": "null"
-                                            }
-                                        },
-                                        "required": [
-                                            "ArchiveDate",
-                                            "DepartmentName",
-                                            "ExternalId",
-                                            "IngestTape",
-                                            "IsAccess",
-                                            "IsOriginal",
-                                            "IsPreservation",
-                                            "IsSynchronized",
-                                            "LastModifiedDate",
-                                            "OrganisationExternalId",
-                                            "OrganisationLongName",
-                                            "OrganisationName",
-                                            "RecordStatus",
-                                            "RecordType",
-                                            "Type",
-                                            "Workflow"
-                                        ]
+                                    "LastModifiedDate": {
+                                        "type": "string"
                                     },
-                                    "RightsManagement": {
-                                        "type": "object",
-                                        "properties": {
-                                            "Permissions": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "Export": {
-                                                        "type": "array",
-                                                        "items": {
-                                                            "type": "string"
-                                                        }
-                                                    },
-                                                    "Write": {
-                                                        "type": "array",
-                                                        "items": {
-                                                            "type": "string"
-                                                        }
-                                                    },
-                                                    "Read": {
-                                                        "type": "array",
-                                                        "items": {
-                                                            "type": "string"
-                                                        }
-                                                    }
-                                                },
-                                                "required": [
-                                                    "Export",
-                                                    "Read",
-                                                    "Write"
-                                                ]
-                                            },
-                                            "ExpiryDate": {
-                                                "type": "null"
-                                            },
-                                            "ExpiryStatus": {
-                                                "type": "null"
-                                            }
-                                        },
-                                        "required": [
-                                            "ExpiryDate",
-                                            "ExpiryStatus",
-                                            "Permissions"
-                                        ]
+                                    "IsSynchronized": {
+                                        "type": "boolean"
                                     },
-                                    "Structural": {
-                                        "type": "object",
-                                        "properties": {
-                                            "FragmentEndTimeCode": {
-                                                "type": "string"
-                                            },
-                                            "HasChildren": {
-                                                "type": "boolean"
-                                            },
-                                            "FragmentStartFrames": {
-                                                "type": "integer"
-                                            },
-                                            "FragmentDurationFrames": {
-                                                "type": "integer"
-                                            },
-                                            "FragmentDurationTimeCode": {
-                                                "type": "string"
-                                            },
-                                            "FragmentStartTimeCode": {
-                                                "type": "string"
-                                            },
-                                            "FragmentEndFrames": {
-                                                "type": "integer"
-                                            },
-                                            "Versioning": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "Status": {
-                                                        "type": "string"
-                                                    },
-                                                    "Version": {
-                                                        "type": "integer"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "Status",
-                                                    "Version"
-                                                ]
-                                            },
-                                            "Sets": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "Set": {
-                                                        "type": "array"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "Set"
-                                                ]
-                                            },
-                                            "Collections": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "Collection": {
-                                                        "type": "array"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "Collection"
-                                                ]
-                                            },
-                                            "Newspapers": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "Newspaper": {
-                                                        "type": "array"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "Newspaper"
-                                                ]
-                                            },
-                                            "Relations": {
-                                                "type": "object"
-                                            },
-                                            "Fragments": {
-                                                "type": "object"
-                                            }
-                                        },
-                                        "required": [
-                                            "Collections",
-                                            "FragmentDurationFrames",
-                                            "FragmentDurationTimeCode",
-                                            "FragmentEndFrames",
-                                            "FragmentEndTimeCode",
-                                            "FragmentStartFrames",
-                                            "FragmentStartTimeCode",
-                                            "Fragments",
-                                            "HasChildren",
-                                            "Newspapers",
-                                            "Relations",
-                                            "Sets",
-                                            "Versioning"
-                                        ]
+                                    "IsOriginal": {
+                                        "type": "boolean"
                                     },
-                                    "Internal": {
-                                        "type": "object",
-                                        "properties": {
-                                            "PathToVideo": {
-                                                "type": "string"
-                                            },
-                                            "OriginalStatus": {
-                                                "type": "string"
-                                            },
-                                            "PathToKeyframe": {
-                                                "type": "string"
-                                            },
-                                            "IsFragment": {
-                                                "type": "boolean"
-                                            },
-                                            "UploadedById": {
-                                                "type": "string"
-                                            },
-                                            "HasKeyframes": {
-                                                "type": "boolean"
-                                            },
-                                            "Browses": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "Browse": {
-                                                        "type": "array",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "BaseUrl": {
-                                                                    "type": "string"
-                                                                },
-                                                                "PathToKeyframe": {
-                                                                    "type": "string"
-                                                                },
-                                                                "PathToKeyframeThumb": {
-                                                                    "type": "string"
-                                                                },
-                                                                "PathToVideo": {
-                                                                    "type": "string"
-                                                                },
-                                                                "HasKeyframes": {
-                                                                    "type": "boolean"
-                                                                },
-                                                                "Container": {
-                                                                    "type": "string"
-                                                                },
-                                                                "Label": {
-                                                                    "type": "string"
-                                                                },
-                                                                "FileSize": {
-                                                                    "type": "integer"
-                                                                },
-                                                                "AudioTracks": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                        "Track": {
-                                                                            "type": "array",
-                                                                            "items": {
-                                                                                "type": "object",
-                                                                                "properties": {
-                                                                                    "Channels": {
-                                                                                        "type": "integer"
-                                                                                    }
-                                                                                },
-                                                                                "required": [
-                                                                                    "Channels"
-                                                                                ]
-                                                                            }
-                                                                        }
-                                                                    },
-                                                                    "required": [
-                                                                        "Track"
-                                                                    ]
-                                                                },
-                                                                "Height": {
-                                                                    "type": "integer"
-                                                                },
-                                                                "VideoCodec": {
-                                                                    "type": "string"
-                                                                },
-                                                                "Width": {
-                                                                    "type": "integer"
-                                                                },
-                                                                "AudioChannels": {
-                                                                    "type": "integer"
-                                                                },
-                                                                "AudioCodec": {
-                                                                    "type": "string"
-                                                                },
-                                                                "BitRate": {
-                                                                    "type": "integer"
-                                                                },
-                                                                "AudioSampleRate": {
-                                                                    "type": "integer"
-                                                                },
-                                                                "VideoBitRate": {
-                                                                    "type": "integer"
-                                                                },
-                                                                "AudioBitRate": {
-                                                                    "type": "integer"
-                                                                },
-                                                                "VideoFps": {
-                                                                    "type": "string"
-                                                                }
-                                                            },
-                                                            "required": [
-                                                                "AudioCodec",
-                                                                "AudioSampleRate",
-                                                                "BaseUrl",
-                                                                "BitRate",
-                                                                "Container",
-                                                                "FileSize",
-                                                                "HasKeyframes",
-                                                                "Label",
-                                                                "PathToVideo"
-                                                            ]
-                                                        }
-                                                    }
-                                                },
-                                                "required": [
-                                                    "Browse"
-                                                ]
-                                            },
-                                            "MediaObjectId": {
-                                                "type": "string"
-                                            },
-                                            "ArchiveStatus": {
-                                                "type": "string"
-                                            },
-                                            "BrowseStatus": {
-                                                "type": "string"
-                                            },
-                                            "RecordId": {
-                                                "type": "string"
-                                            },
-                                            "IsInIngestSpace": {
-                                                "type": "boolean"
-                                            },
-                                            "OrganisationId": {
-                                                "type": "string"
-                                            },
-                                            "FragmentId": {
-                                                "type": "string"
-                                            },
-                                            "PathToKeyframeThumb": {
-                                                "type": "string"
-                                            },
-                                            "ContainsGeoData": {
-                                                "type": "boolean"
-                                            },
-                                            "DepartmentId": {
-                                                "type": "string"
-                                            },
-                                            "IngestSpaceId": {
-                                                "type": "null"
-                                            }
-                                        },
-                                        "required": [
-                                            "ArchiveStatus",
-                                            "BrowseStatus",
-                                            "Browses",
-                                            "ContainsGeoData",
-                                            "DepartmentId",
-                                            "FragmentId",
-                                            "HasKeyframes",
-                                            "IngestSpaceId",
-                                            "IsFragment",
-                                            "IsInIngestSpace",
-                                            "MediaObjectId",
-                                            "OrganisationId",
-                                            "OriginalStatus",
-                                            "PathToKeyframe",
-                                            "PathToKeyframeThumb",
-                                            "PathToVideo",
-                                            "RecordId",
-                                            "UploadedById"
-                                        ]
+                                    "OrganisationName": {
+                                        "type": "string"
                                     },
-                                    "Dynamic": {
-                                        "type": "object",
-                                        "properties": {
-                                            "md5_viaa": {
-                                                "type": "string"
-                                            },
-                                            "type_viaa": {
-                                                "type": "string"
-                                            },
-                                            "ebu_objectType": {
-                                                "type": "string"
-                                            },
-                                            "dc_identifier_localids": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "MEDIA_ID": {
-                                                        "type": "array",
-                                                        "items": {
-                                                            "type": "string"
-                                                        }
-                                                    }
-                                                },
-                                                "required": [
-                                                    "MEDIA_ID"
-                                                ]
-                                            },
-                                            "dc_description_lang": {
-                                                "type": "string"
-                                            },
-                                            "dc_title": {
-                                                "type": "string"
-                                            },
-                                            "dcterms_created": {
-                                                "type": "string"
-                                            },
-                                            "vrt_status": {
-                                                "type": "string"
-                                            },
-                                            "dcterms_issued": {
-                                                "type": "string"
-                                            },
-                                            "sp_name": {
-                                                "type": "string"
-                                            },
-                                            "dc_identifier_localid": {
-                                                "type": "string"
-                                            },
-                                            "PID": {
-                                                "type": "string"
-                                            },
-                                            "CP": {
-                                                "type": "string"
-                                            },
-                                            "vrt_has_been_broadcasted": {
-                                                "type": "string"
-                                            },
-                                            "CP_id": {
-                                                "type": "string"
-                                            }
-                                        },
-                                        "required": [
-                                            "CP",
-                                            "CP_id",
-                                            "PID",
-                                            "dc_description_lang",
-                                            "dc_identifier_localid",
-                                            "dc_identifier_localids",
-                                            "dc_title",
-                                            "dcterms_created",
-                                            "dcterms_issued",
-                                            "ebu_objectType",
-                                            "md5_viaa",
-                                            "sp_name",
-                                            "type_viaa",
-                                            "vrt_has_been_broadcasted",
-                                            "vrt_status"
-                                        ]
+                                    "Workflow": {
+                                        "type": "string"
                                     },
-                                    "Descriptive": {
-                                        "type": "object",
-                                        "properties": {
-                                            "CreationDate": {
-                                                "type": "string"
-                                            },
-                                            "UploadedBy": {
-                                                "type": "string"
-                                            },
-                                            "KeyframeStart": {
-                                                "type": "integer"
-                                            },
-                                            "OriginalFilename": {
-                                                "type": "string"
-                                            },
-                                            "Title": {
-                                                "type": "string"
-                                            },
-                                            "RightsOwner": {
-                                                "type": "string"
-                                            },
-                                            "Description": {
-                                                "type": "null"
-                                            },
-                                            "Rights": {
-                                                "type": "null"
-                                            },
-                                            "Keywords": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "Keyword": {
-                                                        "type": "array"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "Keyword"
-                                                ]
-                                            },
-                                            "Categories": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "Category": {
-                                                        "type": "array"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "Category"
-                                                ]
-                                            },
-                                            "Publisher": {
-                                                "type": "null"
-                                            },
-                                            "Authors": {
-                                                "type": "object"
-                                            },
-                                            "Location": {
-                                                "type": "null"
-                                            },
-                                            "Address": {
-                                                "type": "object"
-                                            },
-                                            "NonPreferredTerm": {
-                                                "type": "null"
-                                            },
-                                            "Publications": {
-                                                "type": "null"
-                                            }
-                                        },
-                                        "required": [
-                                            "Address",
-                                            "Authors",
-                                            "Categories",
-                                            "CreationDate",
-                                            "Description",
-                                            "KeyframeStart",
-                                            "Keywords",
-                                            "Location",
-                                            "NonPreferredTerm",
-                                            "OriginalFilename",
-                                            "Publications",
-                                            "Publisher",
-                                            "Rights",
-                                            "RightsOwner",
-                                            "Title",
-                                            "UploadedBy"
-                                        ]
+                                    "IsPreservation": {
+                                        "type": "boolean"
                                     },
-                                    "Technical": {
-                                        "type": "object",
-                                        "properties": {
-                                            "ImageQuality": {
-                                                "type": "string"
-                                            },
-                                            "AudioTechnical": {
-                                                "type": "string"
-                                            },
-                                            "VideoTechnical": {
-                                                "type": "string"
-                                            },
-                                            "AudioTracks": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "Track": {
-                                                        "type": "array",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "Channels": {
-                                                                    "type": "integer"
-                                                                }
-                                                            },
-                                                            "required": [
-                                                                "Channels"
-                                                            ]
-                                                        }
-                                                    }
-                                                },
-                                                "required": [
-                                                    "Track"
-                                                ]
-                                            },
-                                            "PronomId": {
-                                                "type": "string"
-                                            },
-                                            "OriginalExtension": {
-                                                "type": "string"
-                                            },
-                                            "AudioCodec": {
-                                                "type": "string"
-                                            },
-                                            "AudioSampleRate": {
-                                                "type": "integer"
-                                            },
-                                            "DurationFrames": {
-                                                "type": "integer"
-                                            },
-                                            "VideoCodec": {
-                                                "type": "string"
-                                            },
-                                            "FileSize": {
-                                                "type": "integer"
-                                            },
-                                            "ImageSize": {
-                                                "type": "string"
-                                            },
-                                            "EndFrames": {
-                                                "type": "integer"
-                                            },
-                                            "MimeType": {
-                                                "type": "string"
-                                            },
-                                            "DurationTimeCode": {
-                                                "type": "string"
-                                            },
-                                            "StartFrames": {
-                                                "type": "integer"
-                                            },
-                                            "Height": {
-                                                "type": "integer"
-                                            },
-                                            "EndTimeCode": {
-                                                "type": "string"
-                                            },
-                                            "Width": {
-                                                "type": "integer"
-                                            },
-                                            "Md5": {
-                                                "type": "string"
-                                            },
-                                            "AudioBitRate": {
-                                                "type": "integer"
-                                            },
-                                            "StartTimeCode": {
-                                                "type": "string"
-                                            },
-                                            "VideoBitRate": {
-                                                "type": "integer"
-                                            },
-                                            "ImageOrientation": {
-                                                "type": "string"
-                                            },
-                                            "AudioChannels": {
-                                                "type": "integer"
-                                            },
-                                            "VideoFps": {
-                                                "type": "string"
-                                            },
-                                            "BitRate": {
-                                                "type": "integer"
-                                            },
-                                            "VideoFormat": {
-                                                "type": "null"
-                                            }
-                                        },
-                                        "required": [
-                                            "AudioBitRate",
-                                            "AudioChannels",
-                                            "AudioCodec",
-                                            "AudioSampleRate",
-                                            "AudioTechnical",
-                                            "AudioTracks",
-                                            "BitRate",
-                                            "DurationFrames",
-                                            "DurationTimeCode",
-                                            "EndFrames",
-                                            "EndTimeCode",
-                                            "FileSize",
-                                            "Height",
-                                            "ImageOrientation",
-                                            "ImageQuality",
-                                            "ImageSize",
-                                            "Md5",
-                                            "MimeType",
-                                            "OriginalExtension",
-                                            "PronomId",
-                                            "StartFrames",
-                                            "StartTimeCode",
-                                            "VideoBitRate",
-                                            "VideoCodec",
-                                            "VideoFormat",
-                                            "VideoFps",
-                                            "VideoTechnical",
-                                            "Width"
-                                        ]
+                                    "DepartmentName": {
+                                        "type": "string"
                                     },
-                                    "Context": {
-                                        "type": "object",
-                                        "properties": {
-                                            "IsEditable": {
-                                                "type": "boolean"
-                                            },
-                                            "IsDeletable": {
-                                                "type": "boolean"
-                                            },
-                                            "IsPublic": {
-                                                "type": "boolean"
-                                            },
-                                            "IsExportable": {
-                                                "type": "boolean"
-                                            }
-                                        },
-                                        "required": [
-                                            "IsDeletable",
-                                            "IsEditable",
-                                            "IsExportable",
-                                            "IsPublic"
-                                        ]
+                                    "ArchiveDate": {
+                                        "type": "string"
+                                    },
+                                    "OrganisationLongName": {
+                                        "type": "string"
+                                    },
+                                    "RecordType": {
+                                        "type": "string"
+                                    },
+                                    "RecordStatus": {
+                                        "type": "string"
+                                    },
+                                    "IsAccess": {
+                                        "type": "boolean"
+                                    },
+                                    "ExternalId": {
+                                        "type": "string"
+                                    },
+                                    "Type": {
+                                        "type": "string"
+                                    },
+                                    "OrganisationExternalId": {
+                                        "type": "string"
+                                    },
+                                    "IngestTape": {
+                                        "type": "null"
                                     }
                                 },
                                 "required": [
-                                    "Administrative",
-                                    "Context",
-                                    "Descriptive",
-                                    "Dynamic",
-                                    "Internal",
-                                    "RightsManagement",
-                                    "Structural",
-                                    "Technical"
+                                    "ArchiveDate",
+                                    "DepartmentName",
+                                    "ExternalId",
+                                    "IngestTape",
+                                    "IsAccess",
+                                    "IsOriginal",
+                                    "IsPreservation",
+                                    "IsSynchronized",
+                                    "LastModifiedDate",
+                                    "OrganisationExternalId",
+                                    "OrganisationLongName",
+                                    "OrganisationName",
+                                    "RecordStatus",
+                                    "RecordType",
+                                    "Type",
+                                    "Workflow"
                                 ]
                             },
-                            "default": [
-                                {
-                                    "Administrative": {
-                                        "LastModifiedDate": "2021-02-24T09:59:04Z",
-                                        "IsSynchronized": false,
-                                        "IsOriginal": true,
-                                        "OrganisationName": "vrt",
-                                        "Workflow": "dailies",
-                                        "IsPreservation": false,
-                                        "DepartmentName": "vrt",
-                                        "ArchiveDate": "2019:10:08 04:05:25",
-                                        "OrganisationLongName": "vrt",
-                                        "RecordType": "Record",
-                                        "RecordStatus": "New",
-                                        "IsAccess": false,
-                                        "ExternalId": "qsc24qk63f",
-                                        "Type": "video",
-                                        "OrganisationExternalId": "OR-rf5kf25",
-                                        "IngestTape": null
-                                    },
-                                    "RightsManagement": {
-                                        "Permissions": {
-                                            "Export": [
-                                                "cc7c56fc-58c8-4650-bc63-7e695fbc506c",
-                                                "dc100b7a-efd0-44e3-8816-0905572421da",
-                                                "dd110b7a-efd0-44e3-8816-0905572421da",
-                                                "56c6c177-185c-452b-9998-f91aedc7bdb0"
-                                            ],
-                                            "Write": [
-                                                "cc7c56fc-58c8-4650-bc63-7e695fbc506c",
-                                                "dc100b7a-efd0-44e3-8816-0905572421da",
-                                                "dd110b7a-efd0-44e3-8816-0905572421da",
-                                                "56c6c177-185c-452b-9998-f91aedc7bdb0"
-                                            ],
-                                            "Read": [
-                                                "df110b7a-efd0-44e3-8816-0905572421da",
-                                                "cc7c56fc-58c8-4650-bc63-7e695fbc506c",
-                                                "dc100b7a-efd0-44e3-8816-0905572421da",
-                                                "dd110b7a-efd0-44e3-8816-0905572421da",
-                                                "56c6c177-185c-452b-9998-f91aedc7bdb0"
-                                            ]
-                                        },
-                                        "ExpiryDate": null,
-                                        "ExpiryStatus": null
-                                    },
-                                    "Structural": {
-                                        "FragmentEndTimeCode": "00:02:08.600",
-                                        "HasChildren": false,
-                                        "FragmentStartFrames": 0,
-                                        "FragmentDurationFrames": 3215,
-                                        "FragmentDurationTimeCode": "00:02:08.600",
-                                        "FragmentStartTimeCode": "00:00:00.000",
-                                        "FragmentEndFrames": 3215,
-                                        "Versioning": {
-                                            "Status": "Untracked",
-                                            "Version": 1
-                                        },
-                                        "Sets": {
-                                            "Set": []
-                                        },
-                                        "Collections": {
-                                            "Collection": []
-                                        },
-                                        "Newspapers": {
-                                            "Newspaper": []
-                                        },
-                                        "Relations": {},
-                                        "Fragments": {}
-                                    },
-                                    "Internal": {
-                                        "PathToVideo": "https://archief-media-qas.viaa.be/viaa/VRT/e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d/browse.mp4",
-                                        "OriginalStatus": "completed",
-                                        "PathToKeyframe": "https://archief-media-qas.viaa.be/viaa/VRT/e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d/keyframes/keyframes_1_1/keyframe1.jpg",
-                                        "IsFragment": false,
-                                        "UploadedById": "ff110a7a-efd0-44e3-8816-0905572421da",
-                                        "HasKeyframes": true,
-                                        "Browses": {
-                                            "Browse": [
-                                                {
-                                                    "BaseUrl": "https://archief-media-qas.viaa.be/viaa/VRT/e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d",
-                                                    "PathToKeyframe": "keyframes/keyframes_1_1/keyframe1.jpg",
-                                                    "PathToKeyframeThumb": "keyframes-thumb/keyframes_1_1/keyframe1.jpg",
-                                                    "PathToVideo": "browse.mp4",
-                                                    "HasKeyframes": true,
-                                                    "Container": "mp4",
-                                                    "Label": "mp4",
-                                                    "FileSize": 26664794,
-                                                    "AudioTracks": {
-                                                        "Track": [
-                                                            {
-                                                                "Channels": 2
-                                                            }
-                                                        ]
-                                                    },
-                                                    "Height": 468,
-                                                    "VideoCodec": "h264",
-                                                    "Width": 832,
-                                                    "AudioChannels": 2,
-                                                    "AudioCodec": "aac",
-                                                    "BitRate": 1657227,
-                                                    "AudioSampleRate": 44100,
-                                                    "VideoBitRate": 1450060,
-                                                    "AudioBitRate": 705600,
-                                                    "VideoFps": "25"
-                                                },
-                                                {
-                                                    "BaseUrl": "https://archief-media-qas.viaa.be/viaa/VRT/e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d",
-                                                    "PathToVideo": "peak-0.json",
-                                                    "HasKeyframes": false,
-                                                    "Container": "peak",
-                                                    "Label": "peak-0",
-                                                    "FileSize": 5997,
-                                                    "BitRate": 8,
-                                                    "AudioSampleRate": 10,
-                                                    "AudioCodec": "audiowaveform"
+                            "RightsManagement": {
+                                "type": "object",
+                                "properties": {
+                                    "Permissions": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Export": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
                                                 }
-                                            ]
-                                        },
-                                        "MediaObjectId": "e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d",
-                                        "ArchiveStatus": "in_progress",
-                                        "BrowseStatus": "completed",
-                                        "RecordId": "e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d",
-                                        "IsInIngestSpace": false,
-                                        "OrganisationId": "110",
-                                        "FragmentId": "e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257da7814673917c41aab8091c0d57d7363d",
-                                        "PathToKeyframeThumb": "https://archief-media-qas.viaa.be/viaa/VRT/e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d/keyframes-thumb/keyframes_1_1/keyframe1.jpg",
-                                        "ContainsGeoData": false,
-                                        "DepartmentId": "dd110b7a-efd0-44e3-8816-0905572421da",
-                                        "IngestSpaceId": null
-                                    },
-                                    "Dynamic": {
-                                        "md5_viaa": "3b4a3a387932e135688a5cc6810daaf6",
-                                        "type_viaa": "video",
-                                        "ebu_objectType": "online_item",
-                                        "dc_identifier_localids": {
-                                            "MEDIA_ID": [
-                                                "vid-mc-777f113b-def2-456c-bae9-42f7edfdc1c0-1"
-                                            ]
-                                        },
-                                        "dc_description_lang": "[Unmanned cargo spacecraft grounded after fire near launch pad]?\nA Japanese unmanned cargo spacecraft will remain on the ground for longer than planned after a fire broke out near the launch pad. \n?\n?The Kounotori 8 had been due to lift off from the Tanegashima Space Center in southern Japan at 6:33 a.m. on Wednesday, Japan Time, to deliver supplies to the International Space Station. \n?\n?Mitsubishi Heavy Industries says the fire started shortly after 3 a.m. but has since been put out. \n?\n?The company has not set a new launch date. It will hold a news conference to give an update on the situation. \n?\n?The Kounotori 8 will deliver 5.4 tons of daily supplies, batteries and satellites.\n?NHK / FIRE DELAYS SPACECRAFT LAUNCH  KAGOSHIMA  SEPT.11  DUR:2’08”  NAT\n?\n?WIDE: Spacecraft remaining on launch pad\n?WIDE: Fire breaking\n?WIDE: Fire-flow work underway\n?GV: Presser by Mitsubishi Heavy Industries taking place",
-                                        "dc_title": "JP Fire delays space launch",
-                                        "dcterms_created": "2019-09-11",
-                                        "vrt_status": "nieuw",
-                                        "dcterms_issued": "2019-09-11",
-                                        "sp_name": "dailies",
-                                        "dc_identifier_localid": "vid-mc-777f113b-def2-456c-bae9-42f7edfdc1c0-1",
-                                        "PID": "qsc24qk63f",
-                                        "CP": "VRT",
-                                        "vrt_has_been_broadcasted": "false",
-                                        "CP_id": "OR-rf5kf25"
-                                    },
-                                    "Descriptive": {
-                                        "CreationDate": "2019:09:11 00:00:00",
-                                        "UploadedBy": "bulkupload@vrt",
-                                        "KeyframeStart": 0,
-                                        "OriginalFilename": "qsc24qk63f.MP4",
-                                        "Title": "JP Fire delays space launch",
-                                        "RightsOwner": "ETI ISO Audio Media Handler",
-                                        "Description": null,
-                                        "Rights": null,
-                                        "Keywords": {
-                                            "Keyword": []
-                                        },
-                                        "Categories": {
-                                            "Category": []
-                                        },
-                                        "Publisher": null,
-                                        "Authors": {},
-                                        "Location": null,
-                                        "Address": {},
-                                        "NonPreferredTerm": null,
-                                        "Publications": null
-                                    },
-                                    "Technical": {
-                                        "ImageQuality": "high",
-                                        "AudioTechnical": "aac 2ch 48000Hz 768000bps",
-                                        "VideoTechnical": "h264 1920x1080 50fps 12199514bps",
-                                        "AudioTracks": {
-                                            "Track": [
-                                                {
-                                                    "Channels": 2
+                                            },
+                                            "Write": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
                                                 }
-                                            ]
+                                            },
+                                            "Read": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            }
                                         },
-                                        "PronomId": "fmt/199",
-                                        "OriginalExtension": "MP4",
-                                        "AudioCodec": "aac",
-                                        "AudioSampleRate": 48000,
-                                        "DurationFrames": 3215,
-                                        "VideoCodec": "h264",
-                                        "FileSize": 202488072,
-                                        "ImageSize": "1920x1080",
-                                        "EndFrames": 3215,
-                                        "MimeType": "video/x-m4v",
-                                        "DurationTimeCode": "00:02:08.600",
-                                        "StartFrames": 0,
-                                        "Height": 1080,
-                                        "EndTimeCode": "00:02:08.600",
-                                        "Width": 1920,
-                                        "Md5": "3b4a3a387932e135688a5cc6810daaf6",
-                                        "AudioBitRate": 768000,
-                                        "StartTimeCode": "00:00:00.000",
-                                        "VideoBitRate": 12199514,
-                                        "ImageOrientation": "landscape",
-                                        "AudioChannels": 2,
-                                        "VideoFps": "50",
-                                        "BitRate": 12592541,
-                                        "VideoFormat": null
+                                        "required": [
+                                            "Export",
+                                            "Read",
+                                            "Write"
+                                        ]
                                     },
-                                    "Context": {
-                                        "IsEditable": true,
-                                        "IsDeletable": true,
-                                        "IsPublic": false,
-                                        "IsExportable": true
+                                    "ExpiryDate": {
+                                        "type": "null"
+                                    },
+                                    "ExpiryStatus": {
+                                        "type": "null"
                                     }
-                                }
-                            ]
-                        }
+                                },
+                                "required": [
+                                    "ExpiryDate",
+                                    "ExpiryStatus",
+                                    "Permissions"
+                                ]
+                            },
+                            "Structural": {
+                                "type": "object",
+                                "properties": {
+                                    "FragmentEndTimeCode": {
+                                        "type": "string"
+                                    },
+                                    "HasChildren": {
+                                        "type": "boolean"
+                                    },
+                                    "FragmentStartFrames": {
+                                        "type": "integer"
+                                    },
+                                    "FragmentDurationFrames": {
+                                        "type": "integer"
+                                    },
+                                    "FragmentDurationTimeCode": {
+                                        "type": "string"
+                                    },
+                                    "FragmentStartTimeCode": {
+                                        "type": "string"
+                                    },
+                                    "FragmentEndFrames": {
+                                        "type": "integer"
+                                    },
+                                    "Versioning": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Status": {
+                                                "type": "string"
+                                            },
+                                            "Version": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "required": [
+                                            "Status",
+                                            "Version"
+                                        ]
+                                    },
+                                    "Sets": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Set": {
+                                                "type": "array"
+                                            }
+                                        },
+                                        "required": [
+                                            "Set"
+                                        ]
+                                    },
+                                    "Collections": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Collection": {
+                                                "type": "array"
+                                            }
+                                        },
+                                        "required": [
+                                            "Collection"
+                                        ]
+                                    },
+                                    "Newspapers": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Newspaper": {
+                                                "type": "array"
+                                            }
+                                        },
+                                        "required": [
+                                            "Newspaper"
+                                        ]
+                                    },
+                                    "Relations": {
+                                        "type": "object"
+                                    },
+                                    "Fragments": {
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [
+                                    "Collections",
+                                    "FragmentDurationFrames",
+                                    "FragmentDurationTimeCode",
+                                    "FragmentEndFrames",
+                                    "FragmentEndTimeCode",
+                                    "FragmentStartFrames",
+                                    "FragmentStartTimeCode",
+                                    "Fragments",
+                                    "HasChildren",
+                                    "Newspapers",
+                                    "Relations",
+                                    "Sets",
+                                    "Versioning"
+                                ]
+                            },
+                            "Internal": {
+                                "type": "object",
+                                "properties": {
+                                    "PathToVideo": {
+                                        "type": "string"
+                                    },
+                                    "OriginalStatus": {
+                                        "type": "string"
+                                    },
+                                    "PathToKeyframe": {
+                                        "type": "string"
+                                    },
+                                    "IsFragment": {
+                                        "type": "boolean"
+                                    },
+                                    "UploadedById": {
+                                        "type": "string"
+                                    },
+                                    "HasKeyframes": {
+                                        "type": "boolean"
+                                    },
+                                    "Browses": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Browse": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "BaseUrl": {
+                                                            "type": "string"
+                                                        },
+                                                        "PathToKeyframe": {
+                                                            "type": "string"
+                                                        },
+                                                        "PathToKeyframeThumb": {
+                                                            "type": "string"
+                                                        },
+                                                        "PathToVideo": {
+                                                            "type": "string"
+                                                        },
+                                                        "HasKeyframes": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "Container": {
+                                                            "type": "string"
+                                                        },
+                                                        "Label": {
+                                                            "type": "string"
+                                                        },
+                                                        "FileSize": {
+                                                            "type": "integer"
+                                                        },
+                                                        "AudioTracks": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "Track": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "Channels": {
+                                                                                "type": "integer"
+                                                                            }
+                                                                        },
+                                                                        "required": [
+                                                                            "Channels"
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "Track"
+                                                            ]
+                                                        },
+                                                        "Height": {
+                                                            "type": "integer"
+                                                        },
+                                                        "VideoCodec": {
+                                                            "type": "string"
+                                                        },
+                                                        "Width": {
+                                                            "type": "integer"
+                                                        },
+                                                        "AudioChannels": {
+                                                            "type": "integer"
+                                                        },
+                                                        "AudioCodec": {
+                                                            "type": "string"
+                                                        },
+                                                        "BitRate": {
+                                                            "type": "integer"
+                                                        },
+                                                        "AudioSampleRate": {
+                                                            "type": "integer"
+                                                        },
+                                                        "VideoBitRate": {
+                                                            "type": "integer"
+                                                        },
+                                                        "AudioBitRate": {
+                                                            "type": "integer"
+                                                        },
+                                                        "VideoFps": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "AudioCodec",
+                                                        "AudioSampleRate",
+                                                        "BaseUrl",
+                                                        "BitRate",
+                                                        "Container",
+                                                        "FileSize",
+                                                        "HasKeyframes",
+                                                        "Label",
+                                                        "PathToVideo"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "required": [
+                                            "Browse"
+                                        ]
+                                    },
+                                    "MediaObjectId": {
+                                        "type": "string"
+                                    },
+                                    "ArchiveStatus": {
+                                        "type": "string"
+                                    },
+                                    "BrowseStatus": {
+                                        "type": "string"
+                                    },
+                                    "RecordId": {
+                                        "type": "string"
+                                    },
+                                    "IsInIngestSpace": {
+                                        "type": "boolean"
+                                    },
+                                    "OrganisationId": {
+                                        "type": "string"
+                                    },
+                                    "FragmentId": {
+                                        "type": "string"
+                                    },
+                                    "PathToKeyframeThumb": {
+                                        "type": "string"
+                                    },
+                                    "ContainsGeoData": {
+                                        "type": "boolean"
+                                    },
+                                    "DepartmentId": {
+                                        "type": "string"
+                                    },
+                                    "IngestSpaceId": {
+                                        "type": "null"
+                                    }
+                                },
+                                "required": [
+                                    "ArchiveStatus",
+                                    "BrowseStatus",
+                                    "Browses",
+                                    "ContainsGeoData",
+                                    "DepartmentId",
+                                    "FragmentId",
+                                    "HasKeyframes",
+                                    "IngestSpaceId",
+                                    "IsFragment",
+                                    "IsInIngestSpace",
+                                    "MediaObjectId",
+                                    "OrganisationId",
+                                    "OriginalStatus",
+                                    "PathToKeyframe",
+                                    "PathToKeyframeThumb",
+                                    "PathToVideo",
+                                    "RecordId",
+                                    "UploadedById"
+                                ]
+                            },
+                            "Dynamic": {
+                                "type": "object",
+                                "properties": {
+                                    "md5_viaa": {
+                                        "type": "string"
+                                    },
+                                    "type_viaa": {
+                                        "type": "string"
+                                    },
+                                    "ebu_objectType": {
+                                        "type": "string"
+                                    },
+                                    "dc_identifier_localids": {
+                                        "type": "object",
+                                        "properties": {
+                                            "MEDIA_ID": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "required": [
+                                            "MEDIA_ID"
+                                        ]
+                                    },
+                                    "dc_title": {
+                                        "type": "string"
+                                    },
+                                    "vrt_status": {
+                                        "type": "string"
+                                    },
+                                    "sp_name": {
+                                        "type": "string"
+                                    },
+                                    "PID": {
+                                        "type": "string"
+                                    },
+                                    "CP": {
+                                        "type": "string"
+                                    },
+                                    "vrt_has_been_broadcasted": {
+                                        "type": "string"
+                                    },
+                                    "CP_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "CP",
+                                    "CP_id",
+                                    "PID",
+                                    "dc_identifier_localids",
+                                    "dc_title",
+                                    "sp_name"
+                                    ]
+                            },
+                            "Descriptive": {
+                                "type": "object",
+                                "properties": {
+                                    "CreationDate": {
+                                        "type": "string"
+                                    },
+                                    "UploadedBy": {
+                                        "type": "string"
+                                    },
+                                    "KeyframeStart": {
+                                        "type": "integer"
+                                    },
+                                    "OriginalFilename": {
+                                        "type": "string"
+                                    },
+                                    "Title": {
+                                        "type": "string"
+                                    },
+                                    "RightsOwner": {
+                                        "type": "string"
+                                    },
+                                    "Rights": {
+                                        "type": "null"
+                                    },
+                                    "Keywords": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Keyword": {
+                                                "type": "array"
+                                            }
+                                        },
+                                        "required": [
+                                            "Keyword"
+                                        ]
+                                    },
+                                    "Categories": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Category": {
+                                                "type": "array"
+                                            }
+                                        },
+                                        "required": [
+                                            "Category"
+                                        ]
+                                    },
+                                    "Publisher": {
+                                        "type": "null"
+                                    },
+                                    "Authors": {
+                                        "type": "object"
+                                    },
+                                    "Location": {
+                                        "type": "null"
+                                    },
+                                    "Address": {
+                                        "type": "object"
+                                    },
+                                    "NonPreferredTerm": {
+                                        "type": "null"
+                                    },
+                                    "Publications": {
+                                        "type": "null"
+                                    }
+                                },
+                                "required": [
+                                    "Address",
+                                    "Authors",
+                                    "Categories",
+                                    "CreationDate",
+                                    "KeyframeStart",
+                                    "Keywords",
+                                    "Location",
+                                    "NonPreferredTerm",
+                                    "OriginalFilename",
+                                    "Publications",
+                                    "Publisher",
+                                    "Rights",
+                                    "RightsOwner",
+                                    "Title",
+                                    "UploadedBy"
+                                ]
+                            },
+                            "Technical": {
+                                "type": "object",
+                                "properties": {
+                                    "ImageQuality": {
+                                        "type": "string"
+                                    },
+                                    "AudioTechnical": {
+                                        "type": "string"
+                                    },
+                                    "VideoTechnical": {
+                                        "type": "string"
+                                    },
+                                    "AudioTracks": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Track": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "Channels": {
+                                                            "type": "integer"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "Channels"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "required": [
+                                            "Track"
+                                        ]
+                                    },
+                                    "PronomId": {
+                                        "type": "string"
+                                    },
+                                    "OriginalExtension": {
+                                        "type": "string"
+                                    },
+                                    "AudioCodec": {
+                                        "type": "string"
+                                    },
+                                    "AudioSampleRate": {
+                                        "type": "integer"
+                                    },
+                                    "DurationFrames": {
+                                        "type": "integer"
+                                    },
+                                    "VideoCodec": {
+                                        "type": "string"
+                                    },
+                                    "FileSize": {
+                                        "type": "integer"
+                                    },
+                                    "ImageSize": {
+                                        "type": "string"
+                                    },
+                                    "EndFrames": {
+                                        "type": "integer"
+                                    },
+                                    "MimeType": {
+                                        "type": "string"
+                                    },
+                                    "DurationTimeCode": {
+                                        "type": "string"
+                                    },
+                                    "StartFrames": {
+                                        "type": "integer"
+                                    },
+                                    "Height": {
+                                        "type": "integer"
+                                    },
+                                    "EndTimeCode": {
+                                        "type": "string"
+                                    },
+                                    "Width": {
+                                        "type": "integer"
+                                    },
+                                    "Md5": {
+                                        "type": "string"
+                                    },
+                                    "AudioBitRate": {
+                                        "type": "integer"
+                                    },
+                                    "StartTimeCode": {
+                                        "type": "string"
+                                    },
+                                    "VideoBitRate": {
+                                        "type": "integer"
+                                    },
+                                    "ImageOrientation": {
+                                        "type": "string"
+                                    },
+                                    "AudioChannels": {
+                                        "type": "integer"
+                                    },
+                                    "VideoFps": {
+                                        "type": "string"
+                                    },
+                                    "BitRate": {
+                                        "type": "integer"
+                                    },
+                                    "VideoFormat": {
+                                        "type": "null"
+                                    }
+                                },
+                                "required": [
+                                    "FileSize",
+                                    "OriginalExtension"
+                                ]
+                            },
+                            "Context": {
+                                "type": "object",
+                                "properties": {
+                                    "IsEditable": {
+                                        "type": "boolean"
+                                    },
+                                    "IsDeletable": {
+                                        "type": "boolean"
+                                    },
+                                    "IsPublic": {
+                                        "type": "boolean"
+                                    },
+                                    "IsExportable": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "required": [
+                                    "IsDeletable",
+                                    "IsEditable",
+                                    "IsExportable",
+                                    "IsPublic"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "Administrative",
+                            "Context",
+                            "Descriptive",
+                            "Dynamic",
+                            "Internal",
+                            "RightsManagement",
+                            "Structural",
+                            "Technical"
+                        ]
                     },
-                    "required": [
-                        "MediaDataList",
-                        "StartIndex",
-                        "TotalNrOfResults"
-                    ]
-                },
-                "status": {
-                    "type": "integer",
-                    "enum": [
-                        200
+                    "default": [
+                        {
+                            "Administrative": {
+                                "LastModifiedDate": "2021-02-24T09:59:04Z",
+                                "IsSynchronized": false,
+                                "IsOriginal": true,
+                                "OrganisationName": "vrt",
+                                "Workflow": "dailies",
+                                "IsPreservation": false,
+                                "DepartmentName": "vrt",
+                                "ArchiveDate": "2019:10:08 04:05:25",
+                                "OrganisationLongName": "vrt",
+                                "RecordType": "Record",
+                                "RecordStatus": "New",
+                                "IsAccess": false,
+                                "ExternalId": "qsc24qk63f",
+                                "Type": "video",
+                                "OrganisationExternalId": "OR-rf5kf25",
+                                "IngestTape": null
+                            },
+                            "RightsManagement": {
+                                "Permissions": {
+                                    "Export": [
+                                        "cc7c56fc-58c8-4650-bc63-7e695fbc506c",
+                                        "dc100b7a-efd0-44e3-8816-0905572421da",
+                                        "dd110b7a-efd0-44e3-8816-0905572421da",
+                                        "56c6c177-185c-452b-9998-f91aedc7bdb0"
+                                    ],
+                                    "Write": [
+                                        "cc7c56fc-58c8-4650-bc63-7e695fbc506c",
+                                        "dc100b7a-efd0-44e3-8816-0905572421da",
+                                        "dd110b7a-efd0-44e3-8816-0905572421da",
+                                        "56c6c177-185c-452b-9998-f91aedc7bdb0"
+                                    ],
+                                    "Read": [
+                                        "df110b7a-efd0-44e3-8816-0905572421da",
+                                        "cc7c56fc-58c8-4650-bc63-7e695fbc506c",
+                                        "dc100b7a-efd0-44e3-8816-0905572421da",
+                                        "dd110b7a-efd0-44e3-8816-0905572421da",
+                                        "56c6c177-185c-452b-9998-f91aedc7bdb0"
+                                    ]
+                                },
+                                "ExpiryDate": null,
+                                "ExpiryStatus": null
+                            },
+                            "Structural": {
+                                "FragmentEndTimeCode": "00:02:08.600",
+                                "HasChildren": false,
+                                "FragmentStartFrames": 0,
+                                "FragmentDurationFrames": 3215,
+                                "FragmentDurationTimeCode": "00:02:08.600",
+                                "FragmentStartTimeCode": "00:00:00.000",
+                                "FragmentEndFrames": 3215,
+                                "Versioning": {
+                                    "Status": "Untracked",
+                                    "Version": 1
+                                },
+                                "Sets": {
+                                    "Set": []
+                                },
+                                "Collections": {
+                                    "Collection": []
+                                },
+                                "Newspapers": {
+                                    "Newspaper": []
+                                },
+                                "Relations": {},
+                                "Fragments": {}
+                            },
+                            "Internal": {
+                                "PathToVideo": "https://archief-media-qas.viaa.be/viaa/VRT/e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d/browse.mp4",
+                                "OriginalStatus": "completed",
+                                "PathToKeyframe": "https://archief-media-qas.viaa.be/viaa/VRT/e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d/keyframes/keyframes_1_1/keyframe1.jpg",
+                                "IsFragment": false,
+                                "UploadedById": "ff110a7a-efd0-44e3-8816-0905572421da",
+                                "HasKeyframes": true,
+                                "Browses": {
+                                    "Browse": [
+                                        {
+                                            "BaseUrl": "https://archief-media-qas.viaa.be/viaa/VRT/e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d",
+                                            "PathToKeyframe": "keyframes/keyframes_1_1/keyframe1.jpg",
+                                            "PathToKeyframeThumb": "keyframes-thumb/keyframes_1_1/keyframe1.jpg",
+                                            "PathToVideo": "browse.mp4",
+                                            "HasKeyframes": true,
+                                            "Container": "mp4",
+                                            "Label": "mp4",
+                                            "FileSize": 26664794,
+                                            "AudioTracks": {
+                                                "Track": [
+                                                    {
+                                                        "Channels": 2
+                                                    }
+                                                ]
+                                            },
+                                            "Height": 468,
+                                            "VideoCodec": "h264",
+                                            "Width": 832,
+                                            "AudioChannels": 2,
+                                            "AudioCodec": "aac",
+                                            "BitRate": 1657227,
+                                            "AudioSampleRate": 44100,
+                                            "VideoBitRate": 1450060,
+                                            "AudioBitRate": 705600,
+                                            "VideoFps": "25"
+                                        },
+                                        {
+                                            "BaseUrl": "https://archief-media-qas.viaa.be/viaa/VRT/e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d",
+                                            "PathToVideo": "peak-0.json",
+                                            "HasKeyframes": false,
+                                            "Container": "peak",
+                                            "Label": "peak-0",
+                                            "FileSize": 5997,
+                                            "BitRate": 8,
+                                            "AudioSampleRate": 10,
+                                            "AudioCodec": "audiowaveform"
+                                        }
+                                    ]
+                                },
+                                "MediaObjectId": "e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d",
+                                "ArchiveStatus": "in_progress",
+                                "BrowseStatus": "completed",
+                                "RecordId": "e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d",
+                                "IsInIngestSpace": false,
+                                "OrganisationId": "110",
+                                "FragmentId": "e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257da7814673917c41aab8091c0d57d7363d",
+                                "PathToKeyframeThumb": "https://archief-media-qas.viaa.be/viaa/VRT/e3af390a9e374a6885f1179563dad39346d8a31b71d743fa85466608131a257d/keyframes-thumb/keyframes_1_1/keyframe1.jpg",
+                                "ContainsGeoData": false,
+                                "DepartmentId": "dd110b7a-efd0-44e3-8816-0905572421da",
+                                "IngestSpaceId": null
+                            },
+                            "Dynamic": {
+                                "md5_viaa": "3b4a3a387932e135688a5cc6810daaf6",
+                                "type_viaa": "video",
+                                "ebu_objectType": "online_item",
+                                "dc_identifier_localids": {
+                                    "MEDIA_ID": [
+                                        "vid-mc-777f113b-def2-456c-bae9-42f7edfdc1c0-1"
+                                    ]
+                                },
+                                "dc_description_lang": "[Unmanned cargo spacecraft grounded after fire near launch pad]?\nA Japanese unmanned cargo spacecraft will remain on the ground for longer than planned after a fire broke out near the launch pad. \n?\n?The Kounotori 8 had been due to lift off from the Tanegashima Space Center in southern Japan at 6:33 a.m. on Wednesday, Japan Time, to deliver supplies to the International Space Station. \n?\n?Mitsubishi Heavy Industries says the fire started shortly after 3 a.m. but has since been put out. \n?\n?The company has not set a new launch date. It will hold a news conference to give an update on the situation. \n?\n?The Kounotori 8 will deliver 5.4 tons of daily supplies, batteries and satellites.\n?NHK / FIRE DELAYS SPACECRAFT LAUNCH  KAGOSHIMA  SEPT.11  DUR:2’08”  NAT\n?\n?WIDE: Spacecraft remaining on launch pad\n?WIDE: Fire breaking\n?WIDE: Fire-flow work underway\n?GV: Presser by Mitsubishi Heavy Industries taking place",
+                                "dc_title": "JP Fire delays space launch",
+                                "dcterms_created": "2019-09-11",
+                                "vrt_status": "nieuw",
+                                "dcterms_issued": "2019-09-11",
+                                "sp_name": "dailies",
+                                "dc_identifier_localid": "vid-mc-777f113b-def2-456c-bae9-42f7edfdc1c0-1",
+                                "PID": "qsc24qk63f",
+                                "CP": "VRT",
+                                "vrt_has_been_broadcasted": "false",
+                                "CP_id": "OR-rf5kf25"
+                            },
+                            "Descriptive": {
+                                "CreationDate": "2019:09:11 00:00:00",
+                                "UploadedBy": "bulkupload@vrt",
+                                "KeyframeStart": 0,
+                                "OriginalFilename": "qsc24qk63f.MP4",
+                                "Title": "JP Fire delays space launch",
+                                "RightsOwner": "ETI ISO Audio Media Handler",
+                                "Description": null,
+                                "Rights": null,
+                                "Keywords": {
+                                    "Keyword": []
+                                },
+                                "Categories": {
+                                    "Category": []
+                                },
+                                "Publisher": null,
+                                "Authors": {},
+                                "Location": null,
+                                "Address": {},
+                                "NonPreferredTerm": null,
+                                "Publications": null
+                            },
+                            "Technical": {
+                                "ImageQuality": "high",
+                                "AudioTechnical": "aac 2ch 48000Hz 768000bps",
+                                "VideoTechnical": "h264 1920x1080 50fps 12199514bps",
+                                "AudioTracks": {
+                                    "Track": [
+                                        {
+                                            "Channels": 2
+                                        }
+                                    ]
+                                },
+                                "PronomId": "fmt/199",
+                                "OriginalExtension": "MP4",
+                                "AudioCodec": "aac",
+                                "AudioSampleRate": 48000,
+                                "DurationFrames": 3215,
+                                "VideoCodec": "h264",
+                                "FileSize": 202488072,
+                                "ImageSize": "1920x1080",
+                                "EndFrames": 3215,
+                                "MimeType": "video/x-m4v",
+                                "DurationTimeCode": "00:02:08.600",
+                                "StartFrames": 0,
+                                "Height": 1080,
+                                "EndTimeCode": "00:02:08.600",
+                                "Width": 1920,
+                                "Md5": "3b4a3a387932e135688a5cc6810daaf6",
+                                "AudioBitRate": 768000,
+                                "StartTimeCode": "00:00:00.000",
+                                "VideoBitRate": 12199514,
+                                "ImageOrientation": "landscape",
+                                "AudioChannels": 2,
+                                "VideoFps": "50",
+                                "BitRate": 12592541,
+                                "VideoFormat": null
+                            },
+                            "Context": {
+                                "IsEditable": true,
+                                "IsDeletable": true,
+                                "IsPublic": false,
+                                "IsExportable": true
+                            }
+                        }
                     ]
                 }
-            }
+            },
+            "required": [
+                "MediaDataList",
+                "StartIndex",
+                "TotalNrOfResults"
+            ]
+        },
+        "status": {
+            "type": "integer",
+            "enum": [
+                200
+            ]
         }
     }
 }

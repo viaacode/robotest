@@ -9,15 +9,15 @@ Test setup    Set auth header for     mediahaven     vnd.mediahaven.v2+json
 *** Test Cases ***
 Test media
   [Tags]      rest  mediahaven  prd  qas  int
-  Expect Response Body    ${CURDIR}/schemas/mediav2.json
-  Get         /media/?nrOfResults\=1
-  Object      response body
+  Expect Response    ${CURDIR}/schemas/mediav2.json
+  Get         /media/?nrOfResults\=2
+  Length Should Be      response body properties MediaDataList     3
   Integer     response status   200
   Clear Expectations
 
 Test current user
   [Tags]      rest  mediahaven  prd  qas  int
-  Expect Response Body    ${CURDIR}/schemas/users_currentv2.json
+  Expect Response    ${CURDIR}/schemas/users_currentv2.json
   Get         /users/current
   Object      response body
   Integer     response status   200
@@ -28,7 +28,7 @@ Test current user
 
 Test generic local users
   [Tags]      rest  mediahaven  login   prd  qas  int
-  Expect Response Body    ${CURDIR}/schemas/users_currentv2.json
+  Expect Response    ${CURDIR}/schemas/users_currentv2.json
   &{json_string}=    GetSecret     mediahaven.generic_local_users.${environment.short_name}
   ${generic_users}=  Set Variable  ${json_string.json}
   FOR    ${user}     IN      @{generic_users}
@@ -43,23 +43,16 @@ Test generic local users
 
 Test listing of the webhooks
   [Tags]      rest  mediahaven  prd  qas  int
+  Expect Response    ${CURDIR}/schemas/webhooksv2.json
   Get         /webhooks
-  Expect Response Body    ${CURDIR}/schemas/webhooksv2.json
   Array       response body
   Integer     response status   200
   Clear Expectations
 
 Test listing of the exportlocations
   [Tags]      rest  mediahaven  prd  qas  int
+  Expect Response    ${CURDIR}/schemas/exportlocationsv2.json
   Get         /exportlocations
-  Expect Response Body    ${CURDIR}/schemas/exportlocationsv2.json
-  Array       response body
+  Should Not Be Empty       response body
   Integer     response status   200
   Clear Expectations
-
-*** comment *** 
-  Test getting media v1
-  media v2
-  xml v1
-  xml v2
-  make sure to check if dynamic is not empty

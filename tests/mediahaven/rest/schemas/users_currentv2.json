@@ -6,20 +6,6 @@
     "examples": [],
     "type": "object",
     "properties": {
-        "request": {
-            "type": "object",
-            "properties": {
-                "body": {
-                    "type": "null"
-                },
-                "query": {
-                    "type": "object"
-                }
-            }
-        },
-        "response": {
-            "type": "object",
-            "properties": {
                 "body": {
                     "type": "object",
                     "properties": {
@@ -210,6 +196,4 @@
                     ]
                 }
             }
-        }
-    }
 }

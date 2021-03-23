@@ -6,30 +6,14 @@
     "examples": [],
     "type": "object",
     "properties": {
-        "request": {
-            "type": "object",
-            "properties": {
-                "body": {
-                    "type": "null"
-                },
-                "query": {
-                    "type": "object"
-                }
-            }
+        "body": {
+            "type": "array"
         },
-        "response": {
-            "type": "object",
-            "properties": {
-                "body": {
-                    "type": "array"
-                },
-                "status": {
-                    "type": "integer",
-                    "enum": [
-                        200
-                    ]
-                }
-            }
+        "status": {
+            "type": "integer",
+            "enum": [
+                200
+            ]
         }
     }
 }
