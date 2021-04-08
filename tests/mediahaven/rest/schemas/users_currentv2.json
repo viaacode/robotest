@@ -6,194 +6,120 @@
     "examples": [],
     "type": "object",
     "properties": {
-                "body": {
+        "body": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                },
+                "firstName": {
+                    "type": "string",
+                },
+                "lastName": {
+                    "type": "string",
+                },
+                "login": {
+                    "type": "string",
+                },
+                "organisationId": {
+                    "type": "integer",
+                },
+                "ingestSpaces": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "organisationId": {
+                                "type": "integer"
+                            },
+                            "organisationName": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "name",
+                            "organisationId",
+                            "organisationName"
+                        ]
+                    }
+                },
+                "locale": {
+                    "type": "string",
+                },
+                "rights": {
                     "type": "object",
                     "properties": {
-                        "id": {
-                            "type": "string",
-                            "default": "ff100f7a-efd0-44e3-8816-0905572421da"
+                        "deleteRights": {
+                            "type": "boolean"
                         },
-                        "firstName": {
-                            "type": "string",
-                            "default": "VIAA"
+                        "exportRights": {
+                            "type": "boolean"
                         },
-                        "lastName": {
-                            "type": "string",
-                            "default": "Support"
+                        "writeRights": {
+                            "type": "boolean"
                         },
-                        "login": {
-                            "type": "string",
-                            "default": "viaa@viaa"
-                        },
-                        "organisationId": {
-                            "type": "integer",
-                            "default": 100
-                        },
-                        "ingestSpaces": {
-                            "type": "array",
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "id": {
-                                        "type": "string"
-                                    },
-                                    "name": {
-                                        "type": "string"
-                                    },
-                                    "organisationId": {
-                                        "type": "integer"
-                                    },
-                                    "organisationName": {
-                                        "type": "string"
-                                    }
-                                },
-                                "required": [
-                                    "id",
-                                    "name",
-                                    "organisationId",
-                                    "organisationName"
-                                ]
-                            },
-                            "default": [
-                                {
-                                    "id": "aa100fe7-51d6-41db-bf44-b085a4464c22",
-                                    "name": "Workspace",
-                                    "organisationId": 100,
-                                    "organisationName": "viaa"
-                                }
-                            ]
-                        },
-                        "locale": {
-                            "type": "string",
-                            "default": "nl_BE"
-                        },
-                        "rights": {
-                            "type": "object",
-                            "properties": {
-                                "deleteRights": {
-                                    "type": "boolean",
-                                    "default": true
-                                },
-                                "exportRights": {
-                                    "type": "boolean",
-                                    "default": true
-                                },
-                                "writeRights": {
-                                    "type": "boolean",
-                                    "default": true
-                                },
-                                "readRights": {
-                                    "type": "boolean",
-                                    "default": true
-                                }
-                            },
-                            "required": [
-                                "deleteRights",
-                                "exportRights",
-                                "readRights",
-                                "writeRights"
-                            ]
-                        },
-                        "roles": {
-                            "type": "array",
-                            "default": []
-                        },
-                        "groups": {
-                            "type": "array",
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "id": {
-                                        "type": "string"
-                                    },
-                                    "label": {
-                                        "type": "string"
-                                    }
-                                },
-                                "required": [
-                                    "id",
-                                    "label"
-                                ]
-                            },
-                            "default": [
-                                {
-                                    "id": "dc100b7a-efd0-44e3-8816-0905572421da",
-                                    "label": "viaa-admin"
-                                },
-                                {
-                                    "id": "df100b7a-efd0-44e3-8816-0905572421da",
-                                    "label": "Iedereen"
-                                },
-                                {
-                                    "id": "715d478f-3557-4036-8723-d8aca63be23d",
-                                    "label": "oai onderwijs"
-                                },
-                                {
-                                    "id": "ce06b62b-0732-4060-8965-d642221c5619",
-                                    "label": "oai publiekssite"
-                                },
-                                {
-                                    "id": "fd503073-8724-49da-9d18-f6669edddd61",
-                                    "label": "QC-NOK"
-                                },
-                                {
-                                    "id": "672699dc-78eb-4a9e-8ac8-2995798474b4",
-                                    "label": "VIAA - redactie"
-                                },
-                                {
-                                    "id": "85cd862e-8c9d-40ce-8602-2b66c0131cd1",
-                                    "label": "VIAA kwaliteitscontrole"
-                                },
-                                {
-                                    "id": "cc7c56fc-58c8-4650-bc63-7e695fbc506c",
-                                    "label": "viaa-beeldresearch"
-                                },
-                                {
-                                    "id": "dd100b7a-efd0-44e3-8816-0905572421da",
-                                    "label": "viaa-config"
-                                },
-                                {
-                                    "id": "38c29224-c3d0-42da-ad1d-d0e54eeed1f4",
-                                    "label": "VIAA-metadatamodel"
-                                },
-                                {
-                                    "id": "dd130b7a-efd0-44e3-8816-0905572421da",
-                                    "label": "hethuisvanalijn"
-                                },
-                                {
-                                    "id": "dd103b7a-efd0-44e3-8816-0905572421da",
-                                    "label": "rtv"
-                                },
-                                {
-                                    "id": "dd335b7a-efd0-44e3-8816-0905572421da",
-                                    "label": "walpurgis"
-                                }
-                            ]
-                        },
-                        "system": {
-                            "type": "boolean",
-                            "default": false
+                        "readRights": {
+                            "type": "boolean"
                         }
                     },
                     "required": [
-                        "firstName",
-                        "groups",
-                        "id",
-                        "ingestSpaces",
-                        "lastName",
-                        "locale",
-                        "login",
-                        "organisationId",
-                        "rights",
-                        "roles",
-                        "system"
+                        "deleteRights",
+                        "exportRights",
+                        "readRights",
+                        "writeRights"
                     ]
                 },
-                "status": {
-                    "type": "integer",
-                    "enum": [
-                        200
-                    ]
+                "roles": {
+                    "type": "array"
+                },
+                "groups": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "label": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "label"
+                        ]
+                    }
+                },
+                "system": {
+                    "type": "boolean"
                 }
-            }
+            },
+            "required": [
+                "firstName",
+                "groups",
+                "id",
+                "ingestSpaces",
+                "lastName",
+                "locale",
+                "login",
+                "organisationId",
+                "rights",
+                "roles",
+                "system"
+            ]
+        },
+        "status": {
+            "type": "integer",
+            "enum": [
+                200
+            ]
+        }
+    }
 }
