@@ -1,0 +1,125 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "GET https://archief-qas.viaa.be/mediahaven-rest-api/resources/users/current",
+    "description": "Rest.Rest.Schemagen.Jsonv2: Lookup current user and generate a schema",
+    "default": true,
+    "examples": [],
+    "type": "object",
+    "properties": {
+        "body": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                },
+                "firstName": {
+                    "type": "string",
+                },
+                "lastName": {
+                    "type": "string",
+                },
+                "login": {
+                    "type": "string",
+                },
+                "organisationId": {
+                    "type": "integer",
+                },
+                "ingestSpaces": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "organisationId": {
+                                "type": "integer"
+                            },
+                            "organisationName": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "name",
+                            "organisationId",
+                            "organisationName"
+                        ]
+                    }
+                },
+                "locale": {
+                    "type": "string",
+                },
+                "rights": {
+                    "type": "object",
+                    "properties": {
+                        "deleteRights": {
+                            "type": "boolean"
+                        },
+                        "exportRights": {
+                            "type": "boolean"
+                        },
+                        "writeRights": {
+                            "type": "boolean"
+                        },
+                        "readRights": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "deleteRights",
+                        "exportRights",
+                        "readRights",
+                        "writeRights"
+                    ]
+                },
+                "roles": {
+                    "type": "array"
+                },
+                "groups": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "label": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "label"
+                        ]
+                    }
+                },
+                "system": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "firstName",
+                "groups",
+                "id",
+                "ingestSpaces",
+                "lastName",
+                "locale",
+                "login",
+                "organisationId",
+                "rights",
+                "roles",
+                "system"
+            ]
+        },
+        "status": {
+            "type": "integer",
+            "enum": [
+                200
+            ]
+        }
+    }
+}

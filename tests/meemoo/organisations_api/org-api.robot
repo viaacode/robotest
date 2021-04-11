@@ -1,10 +1,6 @@
 *** Settings ***
 Library       REST  http://${meemoo.services.org_api.url}/api
-
-
-*** Keywords ***
-Set expectations
-  Expect response           ${CURDIR}/schemas/org_api.json
+Suite setup   Expect Response Body   ${CURDIR}/schemas/org_api_body.json
 
 
 *** Test Cases ***
@@ -16,15 +12,18 @@ Test getting an OR-id (uppercase)
   String      $.status            success
   String      $.data.or_id        OR-rf5kf25
   String      $.data.cp_name_mam  vrt
+  Clear Expectations
 
-Test getting an or-id (lowercase)
-  [Tags]      meemoo  rest  prd  qas  regression
-  Get         /org/or-rf5kf25
+Test getting an OR-id with less data
+  [Tags]      meemoo  rest  prd  qas
+  [Documentation]  Some OR-id's carry less data.\nThese should still validate against the schema.
+  Get         /org/OR-h41jm1d
   Output      response body
   Integer     response status     200
   String      $.status            success
-  String      $.data.or_id        OR-rf5kf25
-  String      $.data.cp_name_mam  vrt
+  String      $.data.or_id        OR-h41jm1d
+  String      $.data.cp_name_mam  testbeeld
+  Clear Expectations
 
 Test the completeness of the API data
   [Tags]      meemoo  rest  prd  qas
@@ -37,4 +36,4 @@ Test the completeness of the API data
   String      $.data.cp_name_catpro   minLength=1     
   String      $.data.description      minLength=1     
   String      $.data.accountmanager   minLength=1     
-  Expect response   ${CURDIR}/schemas/org_api_completeness.json
+  Clear Expectations
