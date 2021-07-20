@@ -39,6 +39,12 @@ variables before running the tests.
 
 _TODO_: Refactor into external `robotframework-vault` library.
 
+### Media files for ingest tests
+
+The mediahaven ingest test have an upload phase.
+ - Add media files to mediahaven/tests/ingest 1 upload/media.
+ - Add the filenames and their md5s in the .yaml file. Only the filenames included in this list will be used for the test. The md5 is used to uniquely identify the files. Adding md5s of test files not included in the list of files is not a problem.
+
 ## Test organisation and structure
 
 All tests are organised according to the following structure:
