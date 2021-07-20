@@ -37,4 +37,3 @@ Create RequestsSession with headers
     ${headers}=         Get auth header for     mediahaven
     Set To Dictionary   ${headers}      Accept=application/xml
     Create Session      ${alias}        ${url}   ${headers}
-    
