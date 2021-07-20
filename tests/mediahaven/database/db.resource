@@ -9,7 +9,7 @@ ${DB}              mediahaven_data
 ${PORT}            1433
 ${DBMODULE}        psycopg2
 
-*** Keywords ***
+*** Keywords ***    
 Get username from vault
     [Arguments]     ${path}
     &{secret_key}=  GetSecret   ${path}
