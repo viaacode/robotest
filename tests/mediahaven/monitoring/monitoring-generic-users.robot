@@ -7,7 +7,7 @@ Resource        monitoring-resource.robot
 
 
 *** Test Cases ***
-Test generic LDAP users
+1.2.1 Test generic LDAP users
   [Tags]      web  mediahaven  login   prd  qas  int
   &{json_string}=   GetSecret   mediahaven.generic_ldap_users.${environment.short_name}
   ${generic_users}=  Set Variable  ${json_string.json}
@@ -22,7 +22,7 @@ Test generic LDAP users
   END
   [Teardown]    Close Browser
 
-Test generic local users
+1.2.1 Test generic local users
   [Tags]      web  mediahaven  login   prd  qas  int
   &{json_string}=    GetSecret     mediahaven.generic_local_users.${environment.short_name}
   ${generic_users}=  Set Variable  ${json_string.json}
