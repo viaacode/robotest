@@ -8,7 +8,7 @@ Resource        ../http.resource
 
 
 *** Test Cases ***
-Test generic local users
+1.6.1 Test generic local users
   [Tags]      rest  mediahaven  login   prd  qas  int
   &{json_string}=    GetSecret     mediahaven.generic_local_users.${environment.short_name}
   ${generic_users}=  Set Variable  ${json_string.json}
