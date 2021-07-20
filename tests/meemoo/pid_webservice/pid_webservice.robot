@@ -3,7 +3,7 @@ Library     REST  http://${meemoo.services.pid_webservice.url}
 
 
 *** Test Cases ***
-Test the pid_webservice
+2.2 Test the pid_webservice
   [Tags]      meemoo  rest  prd   qas
   Get         /
   Output      response
