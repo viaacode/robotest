@@ -8,7 +8,7 @@ Set expectations
 
 
 *** Test Cases ***
-Test getting an OR-id (uppercase)
+2.1 Test getting an OR-id (uppercase)
   [Tags]      meemoo  rest  prd  qas
   Get         /org/OR-rf5kf25
   Output      response body
@@ -17,7 +17,7 @@ Test getting an OR-id (uppercase)
   String      $.data.or_id        OR-rf5kf25
   String      $.data.cp_name_mam  vrt
 
-Test getting an or-id (lowercase)
+2.1 Test getting an or-id (lowercase)
   [Tags]      meemoo  rest  prd  qas  regression
   Get         /org/or-rf5kf25
   Output      response body
@@ -26,7 +26,7 @@ Test getting an or-id (lowercase)
   String      $.data.or_id        OR-rf5kf25
   String      $.data.cp_name_mam  vrt
 
-Test the completeness of the API data
+2.1 Test the completeness of the API data
   [Tags]      meemoo  rest  prd  qas
   [Documentation]   For certain OR-id's, the response should be complete.
   Get         /org/OR-rf5kf25

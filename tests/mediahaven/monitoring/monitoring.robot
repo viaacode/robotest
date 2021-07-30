@@ -6,7 +6,7 @@ Documentation     A test suite for the monitoring back-office
 Resource          monitoring-resource.robot
 
 *** Test Cases ***
-Valid Login to MH monitoring interface
+1.2.2 Valid Login to MH monitoring interface
     [Tags]    web-test  login  mediahaven  prd  qas  int
     Open Browser To Login Page
     ${username}=    Get username from vault   mediahaven

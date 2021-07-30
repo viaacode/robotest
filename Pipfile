@@ -17,6 +17,8 @@ hvac = "*"
 robotframework-ftplibrary = "*"
 lxml = "*"
 robotframework-requests = "*"
+robotframework-databaselibrary = ">=1.2.4"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3"

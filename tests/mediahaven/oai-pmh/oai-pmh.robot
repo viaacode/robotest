@@ -8,7 +8,7 @@ Resource         ../http.resource
 Suite setup      Create RequestsSession with headers   oai_pmh   https://${mediahaven.oai_pmh.url}/mediahaven-oai/oai/ 
 
 *** Test Cases ***
-Test Identify
+1.5.1 Test Identify
     [Tags]                  oai_pmh  mediahaven  prd  qas  int
     ${resp}=                Get Request     oai_pmh     ?verb=Identify
     Status Should Be        200             ${resp}
@@ -17,7 +17,7 @@ Test Identify
     Should Be Equal         ${root.tag}     OAI-PMH
     Element Should Exist    ${root}         Identify
 
-Test ListMetadataFormats
+1.5.1 Test ListMetadataFormats
     [Tags]              oai_pmh  mediahaven  prd  qas  int
     ${resp}=            Get Request     oai_pmh     ?verb=ListMetadataFormats
     Status Should Be    200             ${resp}
@@ -28,7 +28,7 @@ Test ListMetadataFormats
     ${formats}=         Get Elements    ${lmf}      metadataFormat
     Length Should Be    ${formats}      6
 
-Test ListSets
+1.5.1 Test ListSets
     [Tags]                  oai_pmh  mediahaven  prd  qas  int
     ${resp}=                Get Request     oai_pmh     ?verb=ListSets
     Status Should Be        200             ${resp}
@@ -37,7 +37,7 @@ Test ListSets
     Should Be Equal         ${root.tag}     OAI-PMH
     Element Should Exist    ${root}         ListSets/set
 
-Test ListRecords mets
+1.5.1 Test ListRecords mets
     [Tags]                  oai_pmh  mediahaven  prd  qas  int
     ${resp}=                Get Request     oai_pmh     ?verb=ListRecords&metadataPrefix=mets
     Status Should Be        200             ${resp}
@@ -46,7 +46,7 @@ Test ListRecords mets
     Should Be Equal         ${root.tag}     OAI-PMH
     Element Should Exist    ${root}         ListRecords/record
 
-Test ListRecords oai_dc
+2.1 Test ListRecords oai_dc
     [Tags]                  oai_pmh  mediahaven  prd  qas  int
     ${resp}=                Get Request     oai_pmh     ?verb=ListRecords&metadataPrefix=oai_dc
     Status Should Be        200             ${resp}
@@ -55,7 +55,7 @@ Test ListRecords oai_dc
     Should Be Equal         ${root.tag}     OAI-PMH
     Element Should Exist    ${root}         ListRecords/record
 
-Test ListIdentifiers
+1.5.1 Test ListIdentifiers
     [Tags]                  oai_pmh  mediahaven  prd  qas  int
     ${resp}=                Get Request     oai_pmh     ?verb=ListIdentifiers&metadataPrefix=mets
     Status Should Be        200             ${resp}
@@ -64,7 +64,7 @@ Test ListIdentifiers
     Should Be Equal         ${root.tag}     OAI-PMH
     Element Should Exist    ${root}         ListIdentifiers/header
 
-Test GetRecord oai_dc by noid
+1.5.1 Test GetRecord oai_dc by noid
     [Tags]                  oai_pmh  mediahaven  prd  qas  int
     ${resp}=                Get Request     oai_pmh                                 ?verb=GetRecord&metadataPrefix=oai_dc&identifier=noid:${mediahaven.oai_pmh.data.noid}
     Status Should Be        200             ${resp}
@@ -75,7 +75,7 @@ Test GetRecord oai_dc by noid
     Element Text Should Be  ${record}       noid:${mediahaven.oai_pmh.data.noid}    header/identifier
     Element Text Should Be  ${record}       ${mediahaven.oai_pmh.data.noid}         metadata/dc/identifier
 
-Test GetRecord mets by noid
+1.5.1 Test GetRecord mets by noid
     [Tags]                  oai_pmh  mediahaven  prd  qas  int
     ${resp}=                Get Request     oai_pmh                                 ?verb=GetRecord&metadataPrefix=mets&identifier=noid:${mediahaven.oai_pmh.data.noid}
     Status Should Be        200             ${resp}
@@ -86,7 +86,7 @@ Test GetRecord mets by noid
     Element Text Should Be  ${record}       noid:${mediahaven.oai_pmh.data.noid}    header/identifier
     Element Should Exist    ${record}       metadata/mets
 
-Test GetRecord mhs by noid
+1.5.1 Test GetRecord mhs by noid
     [Tags]                  oai_pmh  mediahaven  prd  qas  int
     ${resp}=                Get Request     oai_pmh                                 ?verb=GetRecord&metadataPrefix=mhs&identifier=noid:${mediahaven.oai_pmh.data.noid}
     Status Should Be        200             ${resp}
@@ -97,7 +97,7 @@ Test GetRecord mhs by noid
     Element Text Should Be  ${record}       noid:${mediahaven.oai_pmh.data.noid}    header/identifier
     Element Should Exist    ${record}       metadata/Sidecar
 
-Test GetRecord mets-mhs by noid
+1.5.1 Test GetRecord mets-mhs by noid
     [Tags]                  oai_pmh  mediahaven  prd  qas  int
     ${resp}=                Get Request   oai_pmh                                   ?verb=GetRecord&metadataPrefix=mets-mhs&identifier=noid:${mediahaven.oai_pmh.data.noid}
     Status Should Be        200           ${resp}
@@ -108,7 +108,7 @@ Test GetRecord mets-mhs by noid
     Element Text Should Be  ${record}       noid:${mediahaven.oai_pmh.data.noid}    header/identifier
     Element Should Exist    ${record}       metadata/mets
 
-Test GetRecord oai_dc by umid
+1.5.1 Test GetRecord oai_dc by umid
     [Tags]                  oai_pmh  mediahaven  prd  qas  int
     ${resp}=                Get Request     oai_pmh                                 ?verb=GetRecord&metadataPrefix=oai_dc&identifier=umid:${mediahaven.oai_pmh.data.umid}
     Status Should Be        200             ${resp}
@@ -119,7 +119,7 @@ Test GetRecord oai_dc by umid
     Element Text Should Be  ${record}       umid:${mediahaven.oai_pmh.data.umid}    header/identifier
     Element Should Exist    ${record}       metadata/dc
 
-Test UnknownVerb
+1.5.1 Test UnknownVerb
     [Tags]                          oai_pmh  mediahaven  prd  qas  int
     ${resp}=                        Get Request     oai_pmh     ?verb=UnknownVerb
     Status Should Be                200             ${resp}

@@ -15,8 +15,8 @@ Some links about:
 ## Prerequisites
 
 - Python >=3.6
-- [Geckodriver](https://github.com/mozilla/geckodriver/releases/latest) (Download and untar to `/usr/local/bin`)
-- [pipenv](https://pipenv-fork.readthedocs.io/en/latest/)
+- [Geckodriver](run `brew install geckodriver` on Mac, or https://github.com/mozilla/geckodriver/releases/latest)
+- [pipenv](run `brew install pipenv` on Mac, or https://pipenv-fork.readthedocs.io/en/latest/)
 
 ## Installation
 
@@ -38,6 +38,12 @@ Fetched from a [Vault](https://www.vaultproject.io/) instance.
 variables before running the tests.
 
 _TODO_: Refactor into external `robotframework-vault` library.
+
+### Media files for ingest tests
+
+The mediahaven ingest test have an upload phase.
+ - Add media files to mediahaven/tests/ingest 1 upload/media.
+ - Add the filenames and their md5s in the .yaml file. Only the filenames included in this list will be used for the test. The md5 is used to uniquely identify the files. Adding md5s of test files not included in the list of files is not a problem.
 
 ## Test organisation and structure
 

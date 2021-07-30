@@ -7,7 +7,7 @@ Resource      ../http.resource
 Test setup    Set auth header for     mediahaven
 
 *** Test Cases ***
-Test current user
+1.6.2 Test current user
   [Tags]      rest  mediahaven  prd  qas  int
   Get         /users/current
   Object      response body
@@ -18,7 +18,7 @@ Test current user
   Expect Response   ${CURDIR}/schemas/users_current.json
   Clear Expectations
 
-Test listing of the webhooks
+1.6.2 Test listing of the webhooks
   [Tags]      rest  mediahaven  prd  qas  int
   Get         /webhooks
   Array       response body
@@ -26,7 +26,7 @@ Test listing of the webhooks
   Expect Response   ${CURDIR}/schemas/webhooks.json
   Clear Expectations
 
-Test listing of the exportlocations
+1.6.2 Test listing of the exportlocations
   [Tags]      rest  mediahaven  prd  qas  int
   Get         /exportlocations
   Array       response body
