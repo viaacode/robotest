@@ -9,8 +9,8 @@ Resource          monitoring-resource.robot
 Valid Login to MH monitoring interface
     [Tags]    web-test  login  mediahaven  prd  qas  int
     Open Browser To Login Page
-    ${username}=    Get username from vault   mediahaven
-    ${passwd}=      Get passwd from vault     mediahaven
+    ${username}=    Get username from vault   mediahaven.admin_user.${environment.short_name}
+    ${passwd}=      Get passwd from vault     mediahaven.admin_user.${environment.short_name}
     Input Username    ${username}
     Input Password    ${passwd}
     Submit Credentials
