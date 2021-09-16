@@ -17,8 +17,7 @@ Test generic LDAP users
     Input Username   ${user["username"]}
     Input Password   ${user["passwd"]}
     Submit Credentials
-    Index Page Should Be Open
-    Logout
+    Index Page Should Not Be Open
   END
   [Teardown]    Close Browser
 
