@@ -34,7 +34,7 @@ Get auth header for
 
 Create RequestsSession with headers
     [Arguments]         ${alias}        ${url}
-    ${headers}=         Get auth header for     mediahaven
+    ${headers}=         Get auth header for     mediahaven.admin_user.${environment.short_name}
     Set To Dictionary   ${headers}      Accept=application/xml
     Create Session      ${alias}        ${url}   ${headers}
     
