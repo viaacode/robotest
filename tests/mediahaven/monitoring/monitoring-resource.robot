@@ -37,9 +37,14 @@ Logout
     Click Link      id:logout
 
 Index Page Should Be Open
-    Wait Until Location Contains    index.php    
+    Wait Until Location Contains    index.php
     Location Should Contain         index.php
     Page Should Contain Element     id:logout
+
+Index Page Should Not Be Open
+    Wait Until Element Is Visible   id:errors
+    Element Should Contain          id:errors   has no permission to view backend monitoring
+    Location Should Contain         login.php
 
 Index Page Should Have All Tabs
     Page Should Contain Element     link:Ingest
