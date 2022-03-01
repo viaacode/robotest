@@ -16,22 +16,43 @@ Open Browser To Login Page
     Login Page Should Be Open
 
 Login Page Should Be Open
-    Page Should Contain Element     id:login
+    Wait Until Page Contains    Login
 
 Go To Login Page
     Go To    ${LOGIN_URL}
     Login Page Should Be Open
 
-Input Username
+Open IDP page
+    Click Button    xpath://button[@name="serviceLogin" and @value="viaa"]
+    Wait Until Page Contains Element    id:loginform
+
+Input Username MediaHaven
     [Arguments]    ${username}
-    Input Text     id:inputEmail3    ${username}
+    Input Text     id:input-field-username   ${username}
 
-Input Password
+Input Password MediaHaven
     [Arguments]    ${password}
-    Input Text     id:inputPassword3    ${password}
+    Input Text     id:input-field-password    ${password}
 
-Submit Credentials
-    Submit Form
+Submit Credentials MediaHaven
+    Click Button   xpath://button[@name="serviceLogin" and @value="mediahaven"]
+    Allow access if needed
+
+Input Username IDP meemoo
+    [Arguments]    ${username}
+    Input Text     id:inputUsername   ${username}
+
+Input Password IDP meemoo
+    [Arguments]    ${password}
+    Input Text     id:inputPassword    ${password}
+
+Submit Credentials IDP meemoo
+    Click Button     id:wp-submit
+
+Allow access if needed
+    Sleep   1s  Wait to allow the access dialog to show if needed
+    ${count}=   Get Element Count    xpath://button[@name="giveperms" and @value="true"]
+    Run Keyword If      $count == 1     Click Button    xpath://button[@name="giveperms" and @value="true"]
 
 Logout
     Click Link      id:logout
@@ -42,9 +63,8 @@ Index Page Should Be Open
     Page Should Contain Element     id:logout
 
 Index Page Should Not Be Open
-    Wait Until Element Is Visible   id:errors
-    Element Should Contain          id:errors   has no permission to view backend monitoring
-    Location Should Contain         login.php
+    Wait Until Page Contains        has no permission to view backend monitoring
+    Location Should Contain         error.php
 
 Index Page Should Have All Tabs
     Page Should Contain Element     link:Ingest
