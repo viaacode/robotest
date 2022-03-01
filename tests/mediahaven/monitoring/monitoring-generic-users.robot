@@ -14,9 +14,10 @@ Test generic LDAP users
   FOR    ${user}     IN      @{generic_users}
     Log To Console    Testing: ${user["username"]}
     Open Browser To Login Page
-    Input Username   ${user["username"]}
-    Input Password   ${user["passwd"]}
-    Submit Credentials
+    Open IDP page
+    Input Username IDP meemoo  ${user["username"]}
+    Input Password IDP meemoo  ${user["passwd"]}
+    Submit Credentials IDP meemoo
     Index Page Should Not Be Open
   END
   [Teardown]    Close Browser
@@ -28,9 +29,9 @@ Test generic local users
   FOR    ${user}     IN      @{generic_users}
     Log To Console    Testing: ${user["username"]}
     Open Browser To Login Page
-    Input Username   ${user["username"]}
-    Input Password   ${user["passwd"]}
-    Submit Credentials
+    Input Username MediaHaven   ${user["username"]}
+    Input Password MediaHaven   ${user["passwd"]}
+    Submit Credentials MediaHaven
     Index Page Should Be Open
     Logout
   END

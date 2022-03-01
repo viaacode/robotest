@@ -11,9 +11,9 @@ Valid Login to MH monitoring interface
     Open Browser To Login Page
     ${username}=    Get username from vault   mediahaven.admin_user.${environment.short_name}
     ${passwd}=      Get passwd from vault     mediahaven.admin_user.${environment.short_name}
-    Input Username    ${username}
-    Input Password    ${passwd}
-    Submit Credentials
+    Input Username MediaHaven   ${username}
+    Input Password MediaHaven   ${passwd}
+    Submit Credentials MediaHaven
     Index Page Should Be Open
     Index Page Should Have All Tabs
     [Teardown]    Close Browser
